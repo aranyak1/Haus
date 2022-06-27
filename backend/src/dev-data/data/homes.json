@@ -1,0 +1,1202 @@
+[
+  {
+    "_id": "6263d254ee7f12879a41b745",
+    "title": "This is a Villa",
+    "summary": "This is a villa with mountain view",
+    "owner": "6263adf4fc13ae1c4b000401",
+    "price": 4000,
+    "images": [
+      "living_10_PEkJP2ZED.jpeg",
+      "din_10_Pr00bxE1V.jpeg",
+      "bed_10_CmSKtjyapQ.jpeg",
+      "kitchen_10_iDu15yYQh.jpeg",
+      "bath_10_AM86qMOWT.jpeg"
+    ],
+    "totalOccupancy": 2,
+    "totalBedrooms": 4,
+    "totalBathrooms": 4,
+    "ameneties": {
+      "hasTv": false,
+      "hasKitchen": false,
+      "hasWifi": true,
+      "hasAc": false,
+      "hasGeyser": false
+    },
+    "address": {
+      "doorNo": "38-4",
+      "buildingName": "A.B Villa",
+      "state": "Telangana",
+      "city": "Hyderabad",
+      "locality": "Gachibowli",
+      "pincode": "500032"
+    },
+    "location": {
+      "coordinates": [
+        78.331454,
+        17.422706
+      ]
+    },
+    "homeType": "shared",
+    "furnishing": "unfurnished"
+  },
+  {
+    "_id": "6263d254c09b5cfffc19cc9c",
+    "title": "This is a Villa",
+    "summary": "This is a villa with mountain view",
+    "owner": "6263adf4fc13ae1c4b000401",
+    "price": 4600,
+    "images": [
+      "living_11_24bpInDsH.jpeg",
+      "din_11_-3vlAGVx-.jpeg",
+      "bed_11_HqRq1LSfSs.jpeg",
+      "kitchen_11_LSjnWa0ECd.jpeg",
+      "bath_11_nYsbDmLO5r.jpeg"
+    ],
+    "totalOccupancy": 3,
+    "totalBedrooms": 3,
+    "totalBathrooms": 3,
+    "ameneties": {
+      "hasTv": false,
+      "hasKitchen": false,
+      "hasWifi": false,
+      "hasAc": false,
+      "hasGeyser": true
+    },
+    "address": {
+      "doorNo": "8-19",
+      "buildingName": "A.B Villa",
+      "state": "Karnataka",
+      "city": "Banglore",
+      "locality": "Indira Nagar",
+      "pincode": "560038"
+    },
+    "location": {
+      "coordinates": [
+        77.641525,
+        12.982188
+      ]
+    },
+    "homeType": "private",
+    "furnishing": "furnished"
+  },
+  {
+    "_id": "6263d254eb3fcda681ca31a9",
+    "title": "This is a Villa",
+    "summary": "This is a villa with mountain view",
+    "owner": "6263adf4fc13ae1c4b000401",
+    "price": 1100,
+    "images": [
+      "living_12_y7Zn4NZQO.jpeg",
+      "din_12_0Dv-31sM1M.jpeg",
+      "bed_12_IRR8xY2oMM.jpeg",
+      "kitchen_12_M6ztc5eTpt.jpeg",
+      "bath_12_Rn3fKtwcKI.jpeg"
+    ],
+    "totalOccupancy": 2,
+    "totalBedrooms": 3,
+    "totalBathrooms": 3,
+    "ameneties": {
+      "hasTv": false,
+      "hasKitchen": true,
+      "hasWifi": true,
+      "hasAc": false,
+      "hasGeyser": true
+    },
+    "address": {
+      "doorNo": "35-28",
+      "buildingName": "S.R Tower",
+      "state": "Karnataka",
+      "city": "Banglore",
+      "locality": "Indira Nagar",
+      "pincode": "560038"
+    },
+    "location": {
+      "coordinates": [
+        77.641525,
+        12.982188
+      ]
+    },
+    "homeType": "private",
+    "furnishing": "furnished"
+  },
+  {
+    "_id": "6263d254a6b88ff3c52a165a",
+    "title": "This is a Villa",
+    "summary": "This is a villa with mountain view",
+    "owner": "6263adf4fc13ae1c4b000401",
+    "price": 2700,
+    "images": [
+      "living_13_zjQhVEKMy.jpeg",
+      "din_13_8HZ1aJXiM.jpeg",
+      "bed_13_jwV5AX7tf.jpeg",
+      "kitchen_13_w85O9TYN-.jpeg",
+      "bath_13___eQTcdi6q.jpeg"
+    ],
+    "totalOccupancy": 3,
+    "totalBedrooms": 2,
+    "totalBathrooms": 4,
+    "ameneties": {
+      "hasTv": false,
+      "hasKitchen": false,
+      "hasWifi": false,
+      "hasAc": false,
+      "hasGeyser": true
+    },
+    "address": {
+      "doorNo": "19-39",
+      "buildingName": "Palm Tower",
+      "state": "Karnataka",
+      "city": "Banglore",
+      "locality": "Indira Nagar",
+      "pincode": "560038"
+    },
+    "location": {
+      "coordinates": [
+        77.641525,
+        12.982188
+      ]
+    },
+    "homeType": "private",
+    "furnishing": "furnished"
+  },
+  {
+    "_id": "6263d25451ee27ed69bd4547",
+    "title": "This is a Villa",
+    "summary": "This is a villa with mountain view",
+    "owner": "6263adf4fc13ae1c4b000401",
+    "price": 1800,
+    "images": [
+      "living_14_vSNojAM9i.jpeg",
+      "din_14_kh4DUleYX.jpeg",
+      "bed_14_bCznRd0YU.jpeg",
+      "kitchen_14__gw5w9Cnvo.jpeg",
+      "bath_14_v7fIdzYTDe.jpeg"
+    ],
+    "totalOccupancy": 4,
+    "totalBedrooms": 4,
+    "totalBathrooms": 2,
+    "ameneties": {
+      "hasTv": false,
+      "hasKitchen": false,
+      "hasWifi": true,
+      "hasAc": false,
+      "hasGeyser": true
+    },
+    "address": {
+      "doorNo": "28-26",
+      "buildingName": "S.R Tower",
+      "state": "Andhra Pradesh",
+      "city": "Visakhapatnam",
+      "locality": "Maharani Peta",
+      "pincode": "530002"
+    },
+    "location": {
+      "coordinates": [
+        83.312378,
+        17.707363
+      ]
+    },
+    "homeType": "shared",
+    "furnishing": "furnished"
+  },
+  {
+    "_id": "6263d254faef931206464658",
+    "title": "This is a Villa",
+    "summary": "This is a villa with mountain view",
+    "owner": "6263adf4fc13ae1c4b000401",
+    "price": 1000,
+    "images": [
+      "living_15_5aXAiSa28.jpeg",
+      "din_15_uRnH4X4Vc.jpeg",
+      "bed_15_gdWV9M9fJE.jpeg",
+      "kitchen_15_yRnUHArxxk.jpeg",
+      "bath_15_9Vi-oKref.jpeg"
+    ],
+    "totalOccupancy": 2,
+    "totalBedrooms": 4,
+    "totalBathrooms": 4,
+    "ameneties": {
+      "hasTv": false,
+      "hasKitchen": false,
+      "hasWifi": true,
+      "hasAc": true,
+      "hasGeyser": true
+    },
+    "address": {
+      "doorNo": "13-32",
+      "buildingName": "A.B Villa",
+      "state": "Karnataka",
+      "city": "Banglore",
+      "locality": "Indira Nagar",
+      "pincode": "560038"
+    },
+    "location": {
+      "coordinates": [
+        77.641525,
+        12.982188
+      ]
+    },
+    "homeType": "private",
+    "furnishing": "furnished"
+  },
+  {
+    "_id": "6263d25450c694d6ae40f038",
+    "title": "This is a Villa",
+    "summary": "This is a villa with mountain view",
+    "owner": "6263adf4fc13ae1c4b000401",
+    "price": 1000,
+    "images": [
+      "living_16_FsJHj3grb.jpeg",
+      "din_16_H3nQkrflIQ.jpeg",
+      "bed_16_3Bo3Vm581.jpeg",
+      "kitchen_16_wSmzyJ2rb.jpeg",
+      "bath_16_jZrxkb7Q_.jpeg"
+    ],
+    "totalOccupancy": 2,
+    "totalBedrooms": 2,
+    "totalBathrooms": 2,
+    "ameneties": {
+      "hasTv": false,
+      "hasKitchen": false,
+      "hasWifi": false,
+      "hasAc": true,
+      "hasGeyser": false
+    },
+    "address": {
+      "doorNo": "22-17",
+      "buildingName": "S.R Tower",
+      "state": "Karnataka",
+      "city": "Banglore",
+      "locality": "Indira Nagar",
+      "pincode": "560038"
+    },
+    "location": {
+      "coordinates": [
+        77.641525,
+        12.982188
+      ]
+    },
+    "homeType": "private",
+    "furnishing": "furnished"
+  },
+  {
+    "_id": "6263d2546dc132c105008c93",
+    "title": "This is a Villa",
+    "summary": "This is a villa with mountain view",
+    "owner": "6263adf4fc13ae1c4b000401",
+    "price": 4860,
+    "images": [
+      "living_17_109Qye_Ba.jpeg",
+      "din_17_mRyVSH3zz.jpeg",
+      "bed_17_27pLUGHr93.jpeg",
+      "kitchen_17_9j49CZoow.jpeg",
+      "bath_17_BWsjTqFbn.jpeg"
+    ],
+    "totalOccupancy": 3,
+    "totalBedrooms": 2,
+    "totalBathrooms": 2,
+    "ameneties": {
+      "hasTv": false,
+      "hasKitchen": true,
+      "hasWifi": true,
+      "hasAc": true,
+      "hasGeyser": false
+    },
+    "address": {
+      "doorNo": "26-33",
+      "buildingName": "A.B Villa",
+      "state": "Odisha",
+      "city": "Bhubaneswar",
+      "locality": "Khandagiri Square",
+      "pincode": "751030"
+    },
+    "location": {
+      "coordinates": [
+        85.781378,
+        20.25609
+      ]
+    },
+    "homeType": "shared",
+    "furnishing": "semi-furnished"
+  },
+  {
+    "_id": "6263d25497b302e2147ed64c",
+    "title": "This is a Villa",
+    "summary": "This is a villa with mountain view",
+    "owner": "6263adf4fc13ae1c4b000401",
+    "price": 1500,
+    "images": [
+      "living_18_OPfT9L_zM.jpeg",
+      "din_18_PYBzqaOIjo.jpeg",
+      "bed_18_Er2clkqhm-.jpeg",
+      "kitchen_18_LtVLjyZcH.jpeg",
+      "bath_18_EzuDri597.jpeg"
+    ],
+    "totalOccupancy": 4,
+    "totalBedrooms": 3,
+    "totalBathrooms": 4,
+    "ameneties": {
+      "hasTv": true,
+      "hasKitchen": true,
+      "hasWifi": true,
+      "hasAc": false,
+      "hasGeyser": true
+    },
+    "address": {
+      "doorNo": "48-13",
+      "buildingName": "A.B Villa",
+      "state": "Odisha",
+      "city": "Bhubaneswar",
+      "locality": "Khandagiri Square",
+      "pincode": "751030"
+    },
+    "location": {
+      "coordinates": [
+        85.781378,
+        20.25609
+      ]
+    },
+    "homeType": "shared",
+    "furnishing": "semi-furnished"
+  },
+  {
+    "_id": "6263d25469d0efbcfe90484c",
+    "title": "This is a Villa",
+    "summary": "This is a villa with mountain view",
+    "owner": "6263adf4fc13ae1c4b000401",
+    "price": 500,
+    "images": [
+      "living_19_DQqWftT6i.jpeg",
+      "din_19_T7evkQksg.jpeg",
+      "bed_19_p6wP_H3UbL.jpeg",
+      "kitchen_19_UxiMpqKLr.jpeg",
+      "bath_19_y7g6N9xE8j.jpeg"
+    ],
+    "totalOccupancy": 2,
+    "totalBedrooms": 2,
+    "totalBathrooms": 3,
+    "ameneties": {
+      "hasTv": false,
+      "hasKitchen": true,
+      "hasWifi": false,
+      "hasAc": false,
+      "hasGeyser": false
+    },
+    "address": {
+      "doorNo": "4-25",
+      "buildingName": "Palm Tower",
+      "state": "Odisha",
+      "city": "Bhubaneswar",
+      "locality": "Khandagiri Square",
+      "pincode": "751030"
+    },
+    "location": {
+      "coordinates": [
+        85.781378,
+        20.25609
+      ]
+    },
+    "homeType": "shared",
+    "furnishing": "semi-furnished"
+  },
+  {
+    "_id": "6263d254445ec18cdcb38b13",
+    "title": "This is a Villa",
+    "summary": "This is a villa with mountain view",
+    "owner": "6263adf4fc13ae1c4b000401",
+    "price": 3700,
+    "images": [
+      "living_1_RhkjO1xbY.jpeg",
+      "din_1_yENdw7JMz.jpeg",
+      "bed_1_dmNIEqcnn.jpeg",
+      "kitchen_1_FqGcMCw2K.jpeg",
+      "bath_1_BRvvOYmEi.jpeg"
+    ],
+    "totalOccupancy": 2,
+    "totalBedrooms": 3,
+    "totalBathrooms": 3,
+    "ameneties": {
+      "hasTv": true,
+      "hasKitchen": true,
+      "hasWifi": true,
+      "hasAc": false,
+      "hasGeyser": true
+    },
+    "address": {
+      "doorNo": "5-38",
+      "buildingName": "Palm Tower",
+      "state": "Odisha",
+      "city": "Bhubaneswar",
+      "locality": "Khandagiri Square",
+      "pincode": "751030"
+    },
+    "location": {
+      "coordinates": [
+        85.781378,
+        20.25609
+      ]
+    },
+    "homeType": "shared",
+    "furnishing": "semi-furnished"
+  },
+  {
+    "_id": "6263d2549a02b25dc63435ba",
+    "title": "This is a Villa",
+    "summary": "This is a villa with mountain view",
+    "owner": "6263adf4fc13ae1c4b000401",
+    "price": 1300,
+    "images": [
+      "living_20_e6k4iHYycg.jpeg",
+      "din_20_39xUA1jfo.jpeg",
+      "bed_20_qTVC9dGlx.jpeg",
+      "kitchen_20_wp3kpHeFA.jpeg",
+      "bath_20_it52KkBWR.jpeg"
+    ],
+    "totalOccupancy": 4,
+    "totalBedrooms": 4,
+    "totalBathrooms": 2,
+    "ameneties": {
+      "hasTv": true,
+      "hasKitchen": false,
+      "hasWifi": true,
+      "hasAc": false,
+      "hasGeyser": false
+    },
+    "address": {
+      "doorNo": "50-22",
+      "buildingName": "S.R Tower",
+      "state": "Odisha",
+      "city": "Bhubaneswar",
+      "locality": "Khandagiri Square",
+      "pincode": "751030"
+    },
+    "location": {
+      "coordinates": [
+        85.781378,
+        20.25609
+      ]
+    },
+    "homeType": "shared",
+    "furnishing": "semi-furnished"
+  },
+  {
+    "_id": "6263d254537f49fc87d841ec",
+    "title": "This is a Villa",
+    "summary": "This is a villa with mountain view",
+    "owner": "6263adf4fc13ae1c4b000401",
+    "price": 2890,
+    "images": [
+      "living_21_8Xakj4fDi.jpeg",
+      "din_21_AehxPTzBu.jpeg",
+      "bed_21_KLxCHsfRgl.jpeg",
+      "kitchen_21_ieJj0u1IV.jpeg",
+      "bath_21_uC73aMiB2l.jpeg"
+    ],
+    "totalOccupancy": 4,
+    "totalBedrooms": 2,
+    "totalBathrooms": 3,
+    "ameneties": {
+      "hasTv": false,
+      "hasKitchen": true,
+      "hasWifi": false,
+      "hasAc": false,
+      "hasGeyser": true
+    },
+    "address": {
+      "doorNo": "19-31",
+      "buildingName": "A.B Villa",
+      "state": "Karnataka",
+      "city": "Banglore",
+      "locality": "Indira Nagar",
+      "pincode": "560038"
+    },
+    "location": {
+      "coordinates": [
+        77.641525,
+        12.982188
+      ]
+    },
+    "homeType": "private",
+    "furnishing": "furnished"
+  },
+  {
+    "_id": "6263d2549d8a8202a6527fad",
+    "title": "This is a Villa",
+    "summary": "This is a villa with mountain view",
+    "owner": "6263adf4fc13ae1c4b000401",
+    "price": 4700,
+    "images": [
+      "living_22_z_jIE98jV.jpeg",
+      "din_22_XpYxTUt0X.jpeg",
+      "bed_22_KgIzrfoRWz.jpeg",
+      "kitchen_22_qBhGfNGoK3.jpeg",
+      "bath_22_BGZgQWjq4_.jpeg"
+    ],
+    "totalOccupancy": 4,
+    "totalBedrooms": 2,
+    "totalBathrooms": 3,
+    "ameneties": {
+      "hasTv": false,
+      "hasKitchen": true,
+      "hasWifi": true,
+      "hasAc": true,
+      "hasGeyser": false
+    },
+    "address": {
+      "doorNo": "27-8",
+      "buildingName": "S.R Tower",
+      "state": "Karnataka",
+      "city": "Banglore",
+      "locality": "Indira Nagar",
+      "pincode": "560038"
+    },
+    "location": {
+      "coordinates": [
+        77.641525,
+        12.982188
+      ]
+    },
+    "homeType": "private",
+    "furnishing": "furnished"
+  },
+  {
+    "_id": "6263d25452ce04dc3f050a5a",
+    "title": "This is a Villa",
+    "summary": "This is a villa with mountain view",
+    "owner": "6263adf4fc13ae1c4b000401",
+    "price": 4900,
+    "images": [
+      "living_23_Yr4t4DcUT.jpeg",
+      "din_23_AHy5BaWsm.jpeg",
+      "bed_23_q2bV82EZ1.jpeg",
+      "kitchen_23_yKSHpfwvg.jpeg",
+      "bath_23_OvBDR-3ZA.jpeg"
+    ],
+    "totalOccupancy": 2,
+    "totalBedrooms": 2,
+    "totalBathrooms": 4,
+    "ameneties": {
+      "hasTv": true,
+      "hasKitchen": false,
+      "hasWifi": false,
+      "hasAc": true,
+      "hasGeyser": true
+    },
+    "address": {
+      "doorNo": "9-34",
+      "buildingName": "Palm Tower",
+      "state": "Telangana",
+      "city": "Hyderabad",
+      "locality": "Gachibowli",
+      "pincode": "500032"
+    },
+    "location": {
+      "coordinates": [
+        78.331454,
+        17.422706
+      ]
+    },
+    "homeType": "shared",
+    "furnishing": "unfurnished"
+  },
+  {
+    "_id": "6263d25469fb51f3a22af8df",
+    "title": "This is a Villa",
+    "summary": "This is a villa with mountain view",
+    "owner": "6263adf4fc13ae1c4b000401",
+    "price": 2000,
+    "images": [
+      "living_24_5enXJH0Qw.jpeg",
+      "din_24_y-PCQ9yoX.jpeg",
+      "bed_24_U2RCoKHDZ.jpeg",
+      "kitchen_24_SQWVa6W2E.jpeg",
+      "bath_24_NkyBZiXH5.jpeg"
+    ],
+    "totalOccupancy": 4,
+    "totalBedrooms": 4,
+    "totalBathrooms": 4,
+    "ameneties": {
+      "hasTv": true,
+      "hasKitchen": true,
+      "hasWifi": false,
+      "hasAc": true,
+      "hasGeyser": false
+    },
+    "address": {
+      "doorNo": "17-27",
+      "buildingName": "A.B Villa",
+      "state": "Karnataka",
+      "city": "Banglore",
+      "locality": "Indira Nagar",
+      "pincode": "560038"
+    },
+    "location": {
+      "coordinates": [
+        77.641525,
+        12.982188
+      ]
+    },
+    "homeType": "private",
+    "furnishing": "furnished"
+  },
+  {
+    "_id": "6263d25433d1d49b9e796a5f",
+    "title": "This is a Villa",
+    "summary": "This is a villa with mountain view",
+    "owner": "6263adf4fc13ae1c4b000401",
+    "price": 4800,
+    "images": [
+      "living_25_MKDbuk-gV.jpeg",
+      "din_25_Kp7-WhKdL.jpeg",
+      "bed_25_jlKt47K7Z.jpeg",
+      "kitchen_25_BO4waw_iQ.jpeg",
+      "bath_25_nZkfDgm4MH.jpeg"
+    ],
+    "totalOccupancy": 4,
+    "totalBedrooms": 3,
+    "totalBathrooms": 4,
+    "ameneties": {
+      "hasTv": false,
+      "hasKitchen": true,
+      "hasWifi": true,
+      "hasAc": false,
+      "hasGeyser": true
+    },
+    "address": {
+      "doorNo": "43-19",
+      "buildingName": "Palm Tower",
+      "state": "Telangana",
+      "city": "Hyderabad",
+      "locality": "Gachibowli",
+      "pincode": "500032"
+    },
+    "location": {
+      "coordinates": [
+        78.331454,
+        17.422706
+      ]
+    },
+    "homeType": "shared",
+    "furnishing": "unfurnished"
+  },
+  {
+    "_id": "6263d254292e9c3d927d8757",
+    "title": "This is a Villa",
+    "summary": "This is a villa with mountain view",
+    "owner": "6263adf4fc13ae1c4b000401",
+    "price": 600,
+    "images": [
+      "living_2_moringi8S-.jpeg",
+      "din_2_JSmBDFK__.jpeg",
+      "bed_2_2iKJIsF8QP.jpeg",
+      "kitchen_2_WwiwhcxMJ.jpeg",
+      "bath_2_rM0DHyTrd.jpeg"
+    ],
+    "totalOccupancy": 3,
+    "totalBedrooms": 2,
+    "totalBathrooms": 2,
+    "ameneties": {
+      "hasTv": false,
+      "hasKitchen": true,
+      "hasWifi": false,
+      "hasAc": true,
+      "hasGeyser": true
+    },
+    "address": {
+      "doorNo": "9-26",
+      "buildingName": "A.B Villa",
+      "state": "Karnataka",
+      "city": "Banglore",
+      "locality": "Indira Nagar",
+      "pincode": "560038"
+    },
+    "location": {
+      "coordinates": [
+        77.641525,
+        12.982188
+      ]
+    },
+    "homeType": "private",
+    "furnishing": "furnished"
+  },
+  {
+    "_id": "6263d254a51bf2049e07570c",
+    "title": "This is a Villa",
+    "summary": "This is a villa with mountain view",
+    "owner": "6263adf4fc13ae1c4b000401",
+    "price": 1660,
+    "images": [
+      "living_3_7wjMRORjb.jpeg",
+      "din_3_ZhQp-unX45.jpeg",
+      "bed_3_1F-ESJU_Zc.jpeg",
+      "kitchen_3_gPAA5CxUi.jpeg",
+      "bath_3_piW1Ek27B.jpeg"
+    ],
+    "totalOccupancy": 4,
+    "totalBedrooms": 2,
+    "totalBathrooms": 3,
+    "ameneties": {
+      "hasTv": false,
+      "hasKitchen": false,
+      "hasWifi": true,
+      "hasAc": false,
+      "hasGeyser": true
+    },
+    "address": {
+      "doorNo": "31-28",
+      "buildingName": "Palm Tower",
+      "state": "Karnataka",
+      "city": "Banglore",
+      "locality": "Indira Nagar",
+      "pincode": "560038"
+    },
+    "location": {
+      "coordinates": [
+        77.641525,
+        12.982188
+      ]
+    },
+    "homeType": "private",
+    "furnishing": "furnished"
+  },
+  {
+    "_id": "6263d254cc7a660e9c93efac",
+    "title": "This is a Villa",
+    "summary": "This is a villa with mountain view",
+    "owner": "6263adf4fc13ae1c4b000401",
+    "price": 3000,
+    "images": [
+      "living_4_Er9GH_Tya.jpeg",
+      "din_4_7-wwvFXW-.jpeg",
+      "bed_4_gWpS9DEfz.jpeg",
+      "kitchen_4_7BMeuzACY.jpeg",
+      "bath_4_Pag5BCIYJJ.jpeg"
+    ],
+    "totalOccupancy": 2,
+    "totalBedrooms": 2,
+    "totalBathrooms": 4,
+    "ameneties": {
+      "hasTv": true,
+      "hasKitchen": false,
+      "hasWifi": true,
+      "hasAc": true,
+      "hasGeyser": false
+    },
+    "address": {
+      "doorNo": "41-37",
+      "buildingName": "S.R Tower",
+      "state": "Andhra Pradesh",
+      "city": "Visakhapatnam",
+      "locality": "Maharani Peta",
+      "pincode": "530002"
+    },
+    "location": {
+      "coordinates": [
+        83.312378,
+        17.707363
+      ]
+    },
+    "homeType": "shared",
+    "furnishing": "furnished"
+  },
+  {
+    "_id": "6263d254ef1b4b7cb4c4018f",
+    "title": "This is a Villa",
+    "summary": "This is a villa with mountain view",
+    "owner": "6263adf4fc13ae1c4b000401",
+    "price": 4700,
+    "images": [
+      "living_5_g5x03CZpiE.jpeg",
+      "din_5_apnFyxZxXx.jpeg",
+      "bed_5_wWQtK_kFsl.jpeg",
+      "kitchen_5_06VsqAP3z.jpeg",
+      "bath_5_wk74gXYvl.jpeg"
+    ],
+    "totalOccupancy": 4,
+    "totalBedrooms": 4,
+    "totalBathrooms": 4,
+    "ameneties": {
+      "hasTv": true,
+      "hasKitchen": true,
+      "hasWifi": true,
+      "hasAc": false,
+      "hasGeyser": false
+    },
+    "address": {
+      "doorNo": "23-28",
+      "buildingName": "A.B Villa",
+      "state": "Odisha",
+      "city": "Bhubaneswar",
+      "locality": "Khandagiri Square",
+      "pincode": "751030"
+    },
+    "location": {
+      "coordinates": [
+        85.781378,
+        20.25609
+      ]
+    },
+    "homeType": "shared",
+    "furnishing": "semi-furnished"
+  },
+  {
+    "_id": "6263d254f4eca734493c8bcf",
+    "title": "This is a Villa",
+    "summary": "This is a villa with mountain view",
+    "owner": "6263adf4fc13ae1c4b000401",
+    "price": 900,
+    "images": [
+      "living_6_3L4oqNVeG.jpeg",
+      "din_6_wtbrrW9wUw.jpeg",
+      "bed_6_Vixk4BO-mi.jpeg",
+      "kitchen_6_YRCBFP0gxw.jpeg",
+      "bath_6_Hdev4uexl.jpeg"
+    ],
+    "totalOccupancy": 2,
+    "totalBedrooms": 4,
+    "totalBathrooms": 4,
+    "ameneties": {
+      "hasTv": true,
+      "hasKitchen": false,
+      "hasWifi": false,
+      "hasAc": false,
+      "hasGeyser": false
+    },
+    "address": {
+      "doorNo": "11-36",
+      "buildingName": "Palm Tower",
+      "state": "Andhra Pradesh",
+      "city": "Visakhapatnam",
+      "locality": "Maharani Peta",
+      "pincode": "530002"
+    },
+    "location": {
+      "coordinates": [
+        83.312378,
+        17.707363
+      ]
+    },
+    "homeType": "shared",
+    "furnishing": "furnished"
+  },
+  {
+    "_id": "6263d254e4f2d2568b874583",
+    "title": "This is a Villa",
+    "summary": "This is a villa with mountain view",
+    "owner": "6263adf4fc13ae1c4b000401",
+    "price": 4060,
+    "images": [
+      "living_7_y8dbJn4ts.jpeg",
+      "din_7_GnfzR-dWuB.jpeg",
+      "bed_7_USg9eRNTy.jpeg",
+      "kitchen_7_Dkyxl-cob.jpeg",
+      "bath_7_HUCzSx4kt.jpeg"
+    ],
+    "totalOccupancy": 2,
+    "totalBedrooms": 2,
+    "totalBathrooms": 3,
+    "ameneties": {
+      "hasTv": false,
+      "hasKitchen": true,
+      "hasWifi": false,
+      "hasAc": true,
+      "hasGeyser": true
+    },
+    "address": {
+      "doorNo": "36-10",
+      "buildingName": "Palm Tower",
+      "state": "Andhra Pradesh",
+      "city": "Visakhapatnam",
+      "locality": "Maharani Peta",
+      "pincode": "530002"
+    },
+    "location": {
+      "coordinates": [
+        83.312378,
+        17.707363
+      ]
+    },
+    "homeType": "shared",
+    "furnishing": "furnished"
+  },
+  {
+    "_id": "6263d2540bf5e79f49193b2f",
+    "title": "This is a Villa",
+    "summary": "This is a villa with mountain view",
+    "owner": "6263adf4fc13ae1c4b000401",
+    "price": 4500,
+    "images": [
+      "living_8_K-gI16UXA-.jpeg",
+      "din_8_rFsGC_CaL.jpeg",
+      "bed_8_2Ayy-7S30U.jpeg",
+      "kitchen_8_SplcSgbTm.jpeg",
+      "bath_8_MvgAFZ8ciY.jpeg"
+    ],
+    "totalOccupancy": 2,
+    "totalBedrooms": 4,
+    "totalBathrooms": 3,
+    "ameneties": {
+      "hasTv": true,
+      "hasKitchen": false,
+      "hasWifi": true,
+      "hasAc": true,
+      "hasGeyser": false
+    },
+    "address": {
+      "doorNo": "25-37",
+      "buildingName": "A.B Villa",
+      "state": "Odisha",
+      "city": "Bhubaneswar",
+      "locality": "Khandagiri Square",
+      "pincode": "751030"
+    },
+    "location": {
+      "coordinates": [
+        85.781378,
+        20.25609
+      ]
+    },
+    "homeType": "shared",
+    "furnishing": "semi-furnished"
+  },
+  {
+    "_id": "6263d25432aa2569cfd14558",
+    "title": "This is a Villa",
+    "summary": "This is a villa with mountain view",
+    "owner": "6263adf4fc13ae1c4b000401",
+    "price": 1900,
+    "images": [
+      "living_9_vEpS2B9cl.jpeg",
+      "din_9_QV6LUkBdj.jpeg",
+      "bed_9_bBK7V0o8Zv.jpeg",
+      "kitchen_9_krp3w2rjbE.jpeg",
+      "bath_9_sPYMkWwQ5W.jpeg"
+    ],
+    "totalOccupancy": 4,
+    "totalBedrooms": 4,
+    "totalBathrooms": 2,
+    "ameneties": {
+      "hasTv": false,
+      "hasKitchen": false,
+      "hasWifi": false,
+      "hasAc": true,
+      "hasGeyser": true
+    },
+    "address": {
+      "doorNo": "40-8",
+      "buildingName": "S.R Tower",
+      "state": "Telangana",
+      "city": "Hyderabad",
+      "locality": "Gachibowli",
+      "pincode": "500032"
+    },
+    "location": {
+      "coordinates": [
+        78.331454,
+        17.422706
+      ]
+    },
+    "homeType": "shared",
+    "furnishing": "unfurnished"
+  },
+  {
+    "_id": "6263d254b497762be8ac48e8",
+    "title": "This is a Villa",
+    "summary": "This is a villa with mountain view",
+    "owner": "6263adf4fc13ae1c4b000401",
+    "price": 1000,
+    "images": [
+      "living_10_PEkJP2ZED.jpeg",
+      "din_10_Pr00bxE1V.jpeg",
+      "bed_10_CmSKtjyapQ.jpeg",
+      "kitchen_10_iDu15yYQh.jpeg",
+      "bath_10_AM86qMOWT.jpeg"
+    ],
+    "totalOccupancy": 4,
+    "totalBedrooms": 4,
+    "totalBathrooms": 2,
+    "ameneties": {
+      "hasTv": true,
+      "hasKitchen": true,
+      "hasWifi": true,
+      "hasAc": false,
+      "hasGeyser": true
+    },
+    "address": {
+      "doorNo": "2-14",
+      "buildingName": "A.B Villa",
+      "state": "Odisha",
+      "city": "Bhubaneswar",
+      "locality": "Khandagiri Square",
+      "pincode": "751030"
+    },
+    "location": {
+      "coordinates": [
+        85.781378,
+        20.25609
+      ]
+    },
+    "homeType": "shared",
+    "furnishing": "semi-furnished"
+  },
+  {
+    "_id": "6263d25422ba590dc3cd0535",
+    "title": "This is a Villa",
+    "summary": "This is a villa with mountain view",
+    "owner": "6263adf4fc13ae1c4b000401",
+    "price": 500,
+    "images": [
+      "living_11_24bpInDsH.jpeg",
+      "din_11_-3vlAGVx-.jpeg",
+      "bed_11_HqRq1LSfSs.jpeg",
+      "kitchen_11_LSjnWa0ECd.jpeg",
+      "bath_11_nYsbDmLO5r.jpeg"
+    ],
+    "totalOccupancy": 2,
+    "totalBedrooms": 2,
+    "totalBathrooms": 3,
+    "ameneties": {
+      "hasTv": false,
+      "hasKitchen": true,
+      "hasWifi": false,
+      "hasAc": true,
+      "hasGeyser": true
+    },
+    "address": {
+      "doorNo": "29-27",
+      "buildingName": "A.B Villa",
+      "state": "Karnataka",
+      "city": "Banglore",
+      "locality": "Indira Nagar",
+      "pincode": "560038"
+    },
+    "location": {
+      "coordinates": [
+        77.641525,
+        12.982188
+      ]
+    },
+    "homeType": "private",
+    "furnishing": "furnished"
+  },
+  {
+    "_id": "6263d254204c60b4394028d8",
+    "title": "This is a Villa",
+    "summary": "This is a villa with mountain view",
+    "owner": "6263adf4fc13ae1c4b000401",
+    "price": 4000,
+    "images": [
+      "living_12_y7Zn4NZQO.jpeg",
+      "din_12_0Dv-31sM1M.jpeg",
+      "bed_12_IRR8xY2oMM.jpeg",
+      "kitchen_12_M6ztc5eTpt.jpeg",
+      "bath_12_Rn3fKtwcKI.jpeg"
+    ],
+    "totalOccupancy": 2,
+    "totalBedrooms": 4,
+    "totalBathrooms": 3,
+    "ameneties": {
+      "hasTv": false,
+      "hasKitchen": true,
+      "hasWifi": false,
+      "hasAc": false,
+      "hasGeyser": false
+    },
+    "address": {
+      "doorNo": "13-22",
+      "buildingName": "S.R Tower",
+      "state": "Odisha",
+      "city": "Bhubaneswar",
+      "locality": "Khandagiri Square",
+      "pincode": "751030"
+    },
+    "location": {
+      "coordinates": [
+        85.781378,
+        20.25609
+      ]
+    },
+    "homeType": "shared",
+    "furnishing": "semi-furnished"
+  },
+  {
+    "_id": "6263d25421952102e52c83be",
+    "title": "This is a Villa",
+    "summary": "This is a villa with mountain view",
+    "owner": "6263adf4fc13ae1c4b000401",
+    "price": 500,
+    "images": [
+      "living_13_zjQhVEKMy.jpeg",
+      "din_13_8HZ1aJXiM.jpeg",
+      "bed_13_jwV5AX7tf.jpeg",
+      "kitchen_13_w85O9TYN-.jpeg",
+      "bath_13___eQTcdi6q.jpeg"
+    ],
+    "totalOccupancy": 2,
+    "totalBedrooms": 2,
+    "totalBathrooms": 4,
+    "ameneties": {
+      "hasTv": true,
+      "hasKitchen": true,
+      "hasWifi": true,
+      "hasAc": false,
+      "hasGeyser": true
+    },
+    "address": {
+      "doorNo": "9-36",
+      "buildingName": "S.R Tower",
+      "state": "Karnataka",
+      "city": "Banglore",
+      "locality": "Indira Nagar",
+      "pincode": "560038"
+    },
+    "location": {
+      "coordinates": [
+        77.641525,
+        12.982188
+      ]
+    },
+    "homeType": "private",
+    "furnishing": "furnished"
+  },
+  {
+    "_id": "6263d254cd22827495ec2c71",
+    "title": "This is a Villa",
+    "summary": "This is a villa with mountain view",
+    "owner": "6263adf4fc13ae1c4b000401",
+    "price": 3100,
+    "images": [
+      "living_14_vSNojAM9i.jpeg",
+      "din_14_kh4DUleYX.jpeg",
+      "bed_14_bCznRd0YU.jpeg",
+      "kitchen_14__gw5w9Cnvo.jpeg",
+      "bath_14_v7fIdzYTDe.jpeg"
+    ],
+    "totalOccupancy": 2,
+    "totalBedrooms": 4,
+    "totalBathrooms": 2,
+    "ameneties": {
+      "hasTv": false,
+      "hasKitchen": true,
+      "hasWifi": true,
+      "hasAc": false,
+      "hasGeyser": false
+    },
+    "address": {
+      "doorNo": "6-38",
+      "buildingName": "S.R Tower",
+      "state": "Andhra Pradesh",
+      "city": "Visakhapatnam",
+      "locality": "Maharani Peta",
+      "pincode": "530002"
+    },
+    "location": {
+      "coordinates": [
+        83.312378,
+        17.707363
+      ]
+    },
+    "homeType": "shared",
+    "furnishing": "furnished"
+  }
+]

@@ -1,0 +1,303 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@100;300;400;700&display=swap');
+
+// MEDIA QUERY MANAGER
+/*
+0 - 600px:      Phone
+600 - 900px:    Tablet portrait
+900 - 1200px:   Tablet landscape
+[1200 - 1800] is where our normal styles apply
+1800px + :      Big desktop
+$breakpoint arguement choices:
+- phone
+- tab-port
+- tab-land
+- big-desktop
+ORDER: Base + typography > general layout + grid > page layout > components
+1em = 16px
+*/
+@mixin respond($breakpoint) {
+  @if $breakpoint == phone {
+    @media only screen and (max-width: 37.5em) {//600px
+      @content;
+    } 
+  }
+  @if $breakpoint == tab-port {
+    @media only screen and (max-width: 56.25em) {//900px
+      @content;
+    } 
+  }
+  @if $breakpoint == tab-land {
+    @media only screen and (max-width: 75em) {//1200px
+      @content;
+    } 
+  }
+  @if $breakpoint == big-desktop {
+    @media only screen and (min-width: 112.5em) {//1800
+      @content;
+    } 
+  }
+}
+
+$primary-color: #22c55e;
+$secondary-color: rgb(0, 156, 0);
+
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+html {
+  // This defines what 1rem is
+  font-size: 62.5%; //1 rem = 10px; 10px/16px = 62.5%
+  color: #777;
+  font-family: "Lato", sans-serif;
+  @include respond(tab-land) { // width < 1200?
+      font-size: 56.25%; //1 rem = 9px, 9/16 = 50%
+  }
+
+  @include respond(tab-port) { // width < 900?
+      font-size: 50%; //1 rem = 8px, 8/16 = 50%
+  }
+
+  @include respond(big-desktop) {
+      font-size: 75%; //1rem = 12, 12/16
+  }
+}
+
+a{
+  color: inherit;
+}
+
+body {
+  box-sizing: border-box;
+  padding: 2rem;
+
+  @include respond(tab-port) {
+    padding: 0;
+  }
+}
+
+::selection {
+  background-color: $primary-color;
+  color: white;
+}
+
+h1 {
+  font-size: 6rem;
+  line-height: 1;
+}
+
+h2 {
+  font-size: 5rem;
+  line-height: 1;
+}
+
+h3 {
+  font-size: 4rem;
+  line-height: 0.8;
+}
+
+h4 {
+  font-size: 3rem;
+  line-height: 0.6;
+}
+
+h5 {
+  font-size: 2rem;
+  line-height: 0.4;
+}
+
+h6 {
+  font-size: 1rem;
+  line-height: 0.2;
+}
+
+
+
+button
+{
+  outline: none;
+  border: none;
+  letter-spacing: 1px;
+}
+
+.button-p {
+  background-color: $primary-color;
+  color: white;
+  border-radius: 6px;
+  padding: 0.8rem 1.6rem;
+}
+
+.button-s {
+  background-color: white;
+  border-radius: 6px;
+  padding: 0.8rem 1.6rem;
+  border: 1px solid $primary-color;
+}
+
+.el-center {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.custom-input {
+  border: 1px solid rgba(0, 0, 0, 0.15);
+  &::placeholder {
+    padding-left: 10px;
+  }
+  &:hover {
+    border: 1px solid #22c55e;
+  }
+  &:focus {
+    outline: none;
+  }
+}
+
+svg {
+  width: 2rem;
+  height: 2rem;
+}
+
+.brand-name
+{
+    font-size: 3.2rem;
+    font-weight: 400;
+    letter-spacing: 1px;
+}
+
+li
+{
+  list-style: none;
+}
+// Utility Classes
+
+.box-shadow-light
+{
+    box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+}
+
+.flex {
+  display: flex;
+  flex-direction: row;
+}
+
+.flex-c {
+  display: flex;
+  flex-direction: column;
+}
+
+.w-full
+{
+  width: 100%;
+}
+
+.h-full
+{
+  height: 100%;
+}
+
+$spaceAmounts: (1, 2, 3, 4, 5, 6, 7, 8,9,10, auto);
+
+@each $space in $spaceAmounts {
+  @if $space==auto {
+    .m-#{$space} {
+      margin: #{$space};
+    }
+
+    .mx-#{$space} {
+      margin-left: #{$space};
+      margin-right: #{$space};
+    }
+
+    .my-#{$space} {
+      margin-top: #{$space};
+      margin-bottom: #{$space};
+
+    }
+
+    .ml-#{$space} {
+      margin-left: #{$space};
+    }
+
+    .mr-#{$space} {
+      margin-right: #{$space};
+    }
+
+    .mb-#{$space} {
+      margin-bottom: #{$space};
+    }
+
+    .mt-#{$space} {
+      margin-top: #{$space};
+    }
+  }
+
+  @else {
+    .m-#{$space} {
+      margin: #{$space}rem;
+    }
+
+    .mx-#{$space} {
+      margin-left: #{$space}rem;
+      margin-right: #{$space}rem;
+    }
+
+    .my-#{$space} {
+      margin-top: #{$space}rem;
+      margin-bottom: #{$space}rem;
+
+    }
+
+    .ml-#{$space} {
+      margin-left: #{$space}rem;
+    }
+
+    .mr-#{$space} {
+      margin-right: #{$space}rem;
+    }
+
+    .mb-#{$space} {
+      margin-bottom: #{$space}rem;
+    }
+
+    .mt-#{$space} {
+      margin-top: #{$space}rem;
+    }
+
+    .p-#{$space} {
+      padding: #{$space}rem;
+    }
+
+    .px-#{$space} {
+      padding-left: #{$space}rem;
+      padding-right: #{$space}rem;
+    }
+
+    .py-#{$space} {
+      padding-top: #{$space}rem;
+      padding-bottom: #{$space}rem;
+
+    }
+
+    .pl-#{$space} {
+      padding-left: #{$space}rem;
+    }
+
+    .pr-#{$space} {
+      padding-right: #{$space}rem;
+    }
+
+    .pb-#{$space} {
+      padding-bottom: #{$space}rem;
+    }
+
+    .pt-#{$space} {
+      padding-top: #{$space}rem;
+    }
+  }
+}

@@ -1,0 +1,26 @@
+<div>
+  <section
+    class="el-center hero-section box-shadow-light"
+  >
+    <h2 class="mt-4 mb-10">Rent Houses You'll Enjoy!</h2>
+    <app-search-bar></app-search-bar>
+  </section>
+  <section class="el-center destination-city">
+    <h3 class="my-4">
+      Popular Destinations
+    </h3>
+    <div class="flex destination-city_container">
+      <div
+        *ngFor="let city of cities"
+        style="background-image:linear-gradient(to top, rgba(0, 0, 0, 0.397) 15%,rgba(255, 255, 255, 0) 25% 100%),url('assets/images/{{ city }}.jpg');"
+        class="destination-city_card box-shadow-light"
+      >
+        <h4
+          class="destination-city_name"
+        >
+          {{ city | titlecase }}
+        </h4>
+      </div>
+    </div>
+  </section>
+</div>

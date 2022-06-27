@@ -1,0 +1,28 @@
+<section class="el-center">
+    <div class="flex carousel-container">
+      <img
+        src="assets/images/arrow-left.svg"
+        class="carousel-arrow carousel-arrow_left"
+        (click)="prev($event)"
+        alt=""
+      />
+      <nz-carousel
+        class="carousel"
+        [nzDots]="dots"
+        [nzEffect]="effect"
+        (click)="onClick()"
+        #nzCarousel
+      >
+        <div nz-carousel-content *ngFor="let img of house.images">
+          <img  class="carousel-img" src="{{ img_prefix }}/{{ img }}" alt="" />
+          <!-- <ik-image  nz-image class="carousel-img" path="homes/{{ img }}"></ik-image> -->
+        </div>
+      </nz-carousel>
+      <img
+        src="assets/images/arrow-right.svg"
+        class="carousel-arrow carousel-arrow_right"
+        (click)="next($event)"
+        alt=""
+      />
+    </div>
+</section>

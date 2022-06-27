@@ -1,0 +1,72 @@
+<form class="flex" [formGroup]="searchForm" (ngSubmit)="onSubmit()">
+  <input
+  [ngClass]="{'input-padding': !showSearchBarHeader}"
+    class="custom-input search-input"
+    type="search"
+    [size]="searchInputSize"
+    name=""
+    id=""
+    formControlName="searchQuery"
+    placeholder="Where are you going?"
+  />
+  <nz-range-picker
+    [ngClass]="{ 'date-range-width': showSearchBarHeader }"
+    [nzSize]="rangeSize"
+    [ngModelOptions]="{ standalone: true }"
+    [nzDisabledDate]="disabledDate"
+    [nzFormat]="dateFormat"
+    [(ngModel)]="date"
+    (ngModelChange)="onDateChange($event)"
+  >
+  </nz-range-picker>
+  <input
+    type="text"
+    name=""
+    id=""
+    class="custom-input"
+    [size]="travellerInputSize"
+    placeholder="Add Travellers"
+    readonly
+    nz-dropdown
+    [nzDropdownMenu]="menu"
+    [nzClickHide]="false"
+  />
+  <nz-dropdown-menu #menu="nzDropdownMenu">
+    <ul class="counter" nz-menu>
+      <li nz-menu-item>
+        <p>Adults (Ages 12+)</p>
+        <app-counter (countChanged)="setAdults($event)"></app-counter>
+      </li>
+      <li nz-menu-item>
+        <p>Childrens (Ages 2-12)</p>
+        <app-counter (countChanged)="setChildrens($event)"></app-counter>
+      </li>
+      <li nz-menu-item>
+        <p>Infants (Ages 0-2)</p>
+        <app-counter (countChanged)="setInfants($event)"></app-counter>
+      </li>
+    </ul>
+  </nz-dropdown-menu>
+  <button 
+  *ngIf="!showSearchBarHeader" class="button-p search-button" type="submit">
+    <span class="search-button-text">Search</span>
+  </button>
+  <button class="search-button_icon" *ngIf="showSearchBarHeader" type="submit">
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      class="icon icon-tabler icon-tabler-search"
+      width="44"
+      height="44"
+      viewBox="0 -5 25 25"
+      stroke-width="1.5"
+      stroke="#ffffff"
+      fill="none"
+      stroke-linecap="round"
+      stroke-linejoin="round"
+    >
+      <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+      <circle cx="10" cy="10" r="7" />
+      <line x1="21" y1="21" x2="15" y2="15" />
+    </svg>
+  </button>
+</form>

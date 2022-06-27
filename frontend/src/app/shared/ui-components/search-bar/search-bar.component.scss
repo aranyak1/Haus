@@ -1,0 +1,47 @@
+.input-padding
+{
+    padding:1.6rem 1rem;   
+}
+
+.counter p
+{
+    margin-right: auto;
+}
+
+.search-page-input{
+    padding: 0.8rem 0.5rem !important;
+}
+
+.search-button
+{
+    border-top-left-radius:0rem ;
+    border-bottom-left-radius:0rem ;
+
+    &-text
+    {
+        font-size: 1.8rem;
+    }
+
+    &_icon{
+        padding: 0.1rem 1rem;
+        border-top-right-radius:1rem ;
+        border-bottom-right-radius:1rem ;
+        background-color: #22c55e;
+    }
+}
+
+.search-input
+{
+    border-top-left-radius:1rem ;
+    border-bottom-left-radius:1rem ;
+}
+
+::ng-deep ::placeholder { 
+  color: rgb(87, 87, 87) !important; 
+  opacity: 1; /* Firefox */
+}
+
+.date-range-width
+{
+    width: 25rem;
+}

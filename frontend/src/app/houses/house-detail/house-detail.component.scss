@@ -1,0 +1,54 @@
+.carousel-container {
+    position: relative;
+    width: 50rem;
+    height: 30rem;
+    align-items: center;
+
+    i {
+        padding: 0.5rem;
+        z-index: 5;
+
+        ::ng-deep svg {
+            fill: rgba(0, 0, 0, 0.637) !important;
+        }
+    }
+
+}
+
+::ng-deep .ant-image-preview-img{
+    width: 80% !important; 
+    height: 80% !important;
+}
+
+.carousel {
+    width: 100%;
+    height: 100%;
+
+    &-img {
+        width: 100%;
+        height: 100%;
+    }
+
+    &-arrow {
+        height: 2.4rem;
+        margin: 0.5rem;
+        z-index: 10;
+
+        &_left {
+            position: absolute;
+            left: 1rem;
+            transform: rotate(180deg);
+        }
+
+        &_right {
+            position: absolute;
+            right: 1rem;
+        }
+    }
+}
+
+
+[nz-carousel-content] {
+    background: #364d79;
+    overflow: hidden;
+}

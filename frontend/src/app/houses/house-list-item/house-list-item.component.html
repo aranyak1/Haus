@@ -1,0 +1,62 @@
+<div class="card flex" (click)="navigate()">
+  <div class="flex carousel-container">
+    <img
+      src="assets/images/arrow-left.svg"
+      class="carousel-arrow carousel-arrow_left"
+      (click)="prev($event)"
+      alt=""
+    />
+    <nz-carousel
+      class="carousel"
+      [nzDots]="dots"
+      [nzEffect]="effect" 
+      #nzCarousel
+    >
+      <div nz-carousel-content *ngFor="let img of house.images">
+        <ik-image class="carousel-img" path="homes/{{ img }}"></ik-image>
+      </div>
+    </nz-carousel>
+    <img
+      src="assets/images/arrow-right.svg"
+      class="carousel-arrow carousel-arrow_right"
+      (click)="next($event)"
+      alt=""
+    />
+  </div>
+  <div class="card-details">
+    <h5 class="card-title">{{ house.title | titlecase }}</h5>
+    <p class="house-locality">{{ house.address.locality | titlecase }}</p>
+    <div class="house-details">
+      <p class="pr-3">
+        <img src="assets/images/double-bed.svg" class="card-icon" alt="" />
+        <span class="ml-1">
+          {{ house.furnishing | titlecase }}
+        </span>
+      </p>
+
+      <p>
+        <img
+          src="assets/images/{{ house.homeType }}.svg"
+          class="card-icon"
+          alt=""
+        />
+        <span class="ml-1"> {{ house.homeType | titlecase }} house </span>
+      </p>
+    </div>
+    <p class="house-occupancy">
+      {{ house.totalOccupancy }} Occupants
+      <span ngif="hasBedrooms">⋅ {{ house.totalBedrooms }} Bedrooms</span>
+    </p>
+    <div class="house-price">
+      <p class="card-review">
+        {{ house.ratingsAverage }}/5
+        <span>
+          ({{ house.ratingsQuantity }}
+          {{ house.ratingsQuantity > 1 ? "reviews" : "review" }})
+        </span>
+      </p>
+
+      <p class="card-price">₹{{ house.price }} /night</p>
+    </div>
+  </div>
+</div>

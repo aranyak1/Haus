@@ -1,0 +1,29 @@
+h5 {
+    padding-bottom: 10px;
+}
+
+aside {
+    min-width: 25rem;
+
+    >* {
+        margin-bottom: 1rem;
+    }
+
+    justify-content: flex-start;
+}
+
+nz-select {
+    width: 20rem;
+    margin: 1rem 0rem;
+    margin-left: 60rem;
+}
+
+::ng-deep .ant-checkbox-group {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 5px;
+
+    label{
+        margin-bottom: 3px;
+    }
+}

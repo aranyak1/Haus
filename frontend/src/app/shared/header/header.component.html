@@ -1,0 +1,24 @@
+<header class="flex">
+  <a href="#">
+    <span class="brand-name">Haus</span>
+  </a>
+
+  <app-search-bar *ngIf="showSearchBarHeader"></app-search-bar>
+  <div>
+    <button class="button-s mr-1">Become a Host</button>
+    <button
+      class="button-p"
+      nz-popover
+      routerLink="/login"
+      [nzPopoverContent]="contentTemplate"
+      nzPopoverPlacement="bottomRight"
+    >
+      Log in
+    </button>
+  </div>
+  <ng-template #contentTemplate>
+    <div>
+      <a routerLink="/signup">New Here? Sign up</a>
+    </div>
+  </ng-template>
+</header>

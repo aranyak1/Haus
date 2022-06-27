@@ -1,0 +1,67 @@
+.auth_heading {
+  text-decoration: underline;
+  text-decoration-thickness: 0.2rem;
+  text-underline-offset: 0.4rem;
+}
+
+form {
+  width: 28rem;
+}
+
+
+label {
+  display: block;
+  margin-bottom: 5px;
+}
+
+p {
+  margin-bottom: 20px;
+}
+
+svg {
+  cursor: pointer;
+}
+
+input {
+  padding: 5px;
+}
+
+//Remove stepper in input type number
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.firebase-auth {
+  cursor: pointer;
+  img {
+    height: 3rem;
+    width: 3rem;
+  }
+}
+
+.or-container
+{
+  position: relative;
+  width: 28rem;
+  p{
+    width: 100%;
+    padding-right: 2rem;
+    text-align: center;
+  }
+  span{
+    position: absolute;
+    z-index: 2;
+    bottom: 1rem;
+    background-color: white;
+    padding: 0rem 0.8rem;
+  }
+  &_line
+  {
+    position: absolute;
+    width: 100%;
+    border-bottom: 1px black solid;
+  }
+}

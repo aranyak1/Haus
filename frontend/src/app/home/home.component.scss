@@ -1,0 +1,47 @@
+.hero-section {
+  border-radius: 1.5rem;
+  justify-content: flex-start;
+  min-height: 86vh;
+  background-image:
+   linear-gradient(
+      to bottom,
+      rgba(0, 0, 0, 0.26),
+      rgba(0, 0, 0, 0.185)
+    ),
+    url("/assets/images/hero-img-2.jpg");
+  background-size: cover;
+  background-position: top;
+  background-repeat: no-repeat;
+}
+
+h2 {
+  color: white;
+}
+
+.destination-city {
+  background-color: #f9fafb;
+  padding-bottom: 6rem;
+  border-radius: 1.5rem;
+  &_name {
+    position: absolute;
+    color: white;
+    width: 100%;
+    text-align: center;
+    bottom: 0.5rem;
+  }
+
+  &_card {
+    position: relative;
+    height: 18rem;
+    width: 28rem;
+    border-radius: 1rem;
+    background-size: cover;
+    background-position: center;
+    overflow: hidden;
+  }
+
+  &_container {
+    width: 100%;
+    justify-content: space-evenly;
+  }
+}
