@@ -13,7 +13,14 @@ import { environment as env } from 'src/environments/environment';
 export class HouseDetailComponent implements OnInit {
   private id: string = '';
   private images = [];
-  public house: any = {};
+  public house: any = {
+    title: '',
+    ratingsAverage: 0,
+    price:0,
+    address: {
+      city: '',
+      state:''
+  }};
   dots = false;
   effect = 'scrollx';
   img_prefix = env.Imagekitio.urlEndpoint + '/homes';
@@ -29,6 +36,7 @@ export class HouseDetailComponent implements OnInit {
     this.id = this.route.snapshot.paramMap.get('id')!;
     this.houseService.getHouseById(this.id).subscribe((res: any) => {
       this.house = res.data.data;
+      console.log(this.house)
       this.images = this.house.images.map((img: string) => {
         return {
           src: `${this.img_prefix}/${img}`,

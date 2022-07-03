@@ -1,28 +1,41 @@
-<section class="el-center">
-    <div class="flex carousel-container">
-      <img
-        src="assets/images/arrow-left.svg"
-        class="carousel-arrow carousel-arrow_left"
-        (click)="prev($event)"
-        alt=""
-      />
-      <nz-carousel
-        class="carousel"
-        [nzDots]="dots"
-        [nzEffect]="effect"
-        (click)="onClick()"
-        #nzCarousel
-      >
-        <div nz-carousel-content *ngFor="let img of house.images">
-          <img  class="carousel-img" src="{{ img_prefix }}/{{ img }}" alt="" />
-          <!-- <ik-image  nz-image class="carousel-img" path="homes/{{ img }}"></ik-image> -->
-        </div>
-      </nz-carousel>
-      <img
-        src="assets/images/arrow-right.svg"
-        class="carousel-arrow carousel-arrow_right"
-        (click)="next($event)"
-        alt=""
-      />
+<section class="mx-8 my-2 el-center">
+  <div class="house_address my-2 flex">
+    <h4>
+      {{ house.title }} , {{ house.address.city }} , {{ house.address.state }}
+    </h4>
+    <h4>{{ house.ratingsAverage }}/5</h4>
+  </div>
+  <div class="house_detail flex">
+    <div class="house_detail-carousel">
+      <div class="flex carousel-container box-shadow-light">
+        <img
+          src="assets/images/arrow-left.svg"
+          class="carousel-arrow carousel-arrow_left"
+          (click)="prev($event)"
+          alt=""
+        />
+        <nz-carousel
+          class="carousel"
+          [nzDots]="dots"
+          [nzEffect]="effect"
+          (click)="onClick()"
+          #nzCarousel
+        >
+          <div nz-carousel-content *ngFor="let img of house.images">
+            <img class="carousel-img" src="{{ img_prefix }}/{{ img }}" alt="" />
+            <!-- <ik-image  nz-image class="carousel-img" path="homes/{{ img }}"></ik-image> -->
+          </div>
+        </nz-carousel>
+        <img
+          src="assets/images/arrow-right.svg"
+          class="carousel-arrow carousel-arrow_right"
+          (click)="next($event)"
+          alt=""
+        />
+      </div>
     </div>
+    <div class="el-center house_detail-price-card box-shadow-light">
+      <h5>₹{{ house.price }} /night</h5>
+    </div>
+  </div>
 </section>

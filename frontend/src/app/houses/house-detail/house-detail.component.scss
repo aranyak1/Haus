@@ -1,8 +1,21 @@
+// section{
+
+// }
+
+.house_address{
+    width: 100%;
+    justify-content: space-between;
+}
+
+
+
 .carousel-container {
     position: relative;
-    width: 50rem;
+    width: 70rem;
     height: 30rem;
     align-items: center;
+    border-radius: 1rem;
+    overflow: hidden;
 
     i {
         padding: 0.5rem;
@@ -52,3 +65,15 @@
     background: #364d79;
     overflow: hidden;
 }
+
+.house_detail
+{
+    width: 100%;
+    justify-content: space-around !important;
+    &-price-card{
+        height: 30rem;
+        width: 30rem;
+        border-radius: 1rem;
+    }
+}
+
