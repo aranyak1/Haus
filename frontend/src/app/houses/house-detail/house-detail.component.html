@@ -33,9 +33,66 @@
           alt=""
         />
       </div>
+      <div class="quick_facts mt-6 el-center">
+        <h4>Quick Facts</h4>
+        <ul>
+          <li>
+            <img class="quick_facts-icons" src="assets/images/{{house.homeType}}.svg" alt="" />
+            <span>{{ house.homeType | titlecase }} Room</span>
+          </li>
+          <li>
+            <img class="quick_facts-icons" src="assets/images/shared.svg" alt="" />
+            <span>{{ house.totalOccupancy }} Occupants</span>
+          </li>
+          <li>
+            <img class="quick_facts-icons" src="assets/images/bedroom.svg" alt="" />
+            <span>{{ house.totalBedrooms }} Bedrooms</span>
+          </li>
+          <li>
+            <img class="quick_facts-icons" src="assets/images/shower.svg" alt="" />
+            <span>{{ house.totalBathrooms }} Bathrooms</span>
+          </li>
+          <li>
+            <img
+              class="quick_facts-icons"
+              src="assets/images/{{
+                house.furnishing == 'furnished' ? 'furniture.svg' : 'chair.svg'
+              }}"
+              alt=""
+            />
+            <span>{{ house.furnishing | titlecase }}</span>
+          </li>
+        </ul>
+      </div>
+      <div class="ameneties el-center">
+        <h4>Amenities</h4>
+        <ul>
+          <li *ngFor="let item of ameneties">
+            <img
+              class="ameneties-icons"
+              src="assets/images/{{ item }}.svg"
+              alt=""
+            />
+            <span>{{ item }}</span>
+          </li>
+        </ul>
+      </div>
     </div>
     <div class="el-center house_detail-price-card box-shadow-light">
       <h5>₹{{ house.price }} /night</h5>
+      <nz-range-picker
+        [ngClass]="{ 'date-range-width': showSearchBarHeader }"
+        [nzSize]="rangeSize"
+        [ngModelOptions]="{ standalone: true }"
+        [nzDisabledDate]="disabledDate"
+        [nzFormat]="dateFormat"
+        [(ngModel)]="date"
+        (ngModelChange)="onDateChange($event)"
+      >
+      </nz-range-picker>
+      <button class="button-p w-full">Book Room</button>
+      <h5>Total Price = ₹ {{ totalPrice }}</h5>
     </div>
   </div>
+  <div class="map-container">this is map</div>
 </section>

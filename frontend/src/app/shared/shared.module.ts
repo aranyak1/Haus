@@ -45,6 +45,7 @@ import { ImagekitioAngularModule } from 'imagekitio-angular';
     NzIconModule,
     NzInputModule,
     NzPaginationModule,
+    NzDatePickerModule,
     NzCheckboxModule,
     NzSelectModule,
     FooterComponent,

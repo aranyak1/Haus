@@ -71,9 +71,65 @@
     width: 100%;
     justify-content: space-around !important;
     &-price-card{
+        position:sticky;
+        top: 0;
+        justify-content: space-evenly;
         height: 30rem;
         width: 30rem;
         border-radius: 1rem;
     }
 }
 
+.quick_facts{
+    
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+    h4{
+        margin-top: 4rem;
+        margin-bottom: 2rem;
+    }
+   ul {
+       column-count: 3;
+       li{
+        margin-bottom: 2rem;
+       }
+   }
+
+   span {
+
+       font-size: 1.8rem;
+       display: inline-block;
+       margin-left: 1rem;
+   }
+
+   &-icons {
+       margin-left: 1.5rem;
+       height: 1.8rem;
+   }
+}
+
+.ameneties{
+    h4{
+        margin-bottom: 3rem;
+    }
+
+    ul{
+        column-count: 4;
+    }
+
+    span{
+
+        font-size: 1.8rem;
+        display: inline-block;
+        margin-left: 1rem;
+    }    
+
+    &-icons{
+        margin-left: 1.5rem;
+        height: 1.8rem;
+    }
+}
+
+.map-container{
+    height: 10rem;
+}

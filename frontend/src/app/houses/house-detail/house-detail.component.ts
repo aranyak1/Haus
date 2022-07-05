@@ -4,6 +4,9 @@ import { HouseService } from 'src/app/core/services/house.service';
 import { NzCarouselComponent } from 'ng-zorro-antd/carousel';
 import { NzImageService } from 'ng-zorro-antd/image';
 import { environment as env } from 'src/environments/environment';
+import { differenceInCalendarDays } from 'date-fns';
+import { NzDatePickerSizeType } from 'ng-zorro-antd/date-picker';
+import { SearchBarService } from 'src/app/core/services/search-bar.service';
 
 @Component({
   selector: 'app-house-detail',
@@ -11,16 +14,29 @@ import { environment as env } from 'src/environments/environment';
   styleUrls: ['./house-detail.component.scss'],
 })
 export class HouseDetailComponent implements OnInit {
+  rangeSize: NzDatePickerSizeType = 'large';
+  startDate = '';
+  endDate = '';
+  showSearchBarHeader = false;
+  searchInputSize = 30;
+  travellerInputSize = 20;
+  date = null;
+  dateFormat = 'dd/MM/yyyy';
+  today = new Date();
+  totalPrice = 0;
+  ameneties:any = []
   private id: string = '';
   private images = [];
+  private totalDays = 1;
   public house: any = {
     title: '',
     ratingsAverage: 0,
-    price:0,
+    price: 0,
     address: {
       city: '',
-      state:''
-  }};
+      state: '',
+    },
+  };
   dots = false;
   effect = 'scrollx';
   img_prefix = env.Imagekitio.urlEndpoint + '/homes';
@@ -36,7 +52,7 @@ export class HouseDetailComponent implements OnInit {
     this.id = this.route.snapshot.paramMap.get('id')!;
     this.houseService.getHouseById(this.id).subscribe((res: any) => {
       this.house = res.data.data;
-      console.log(this.house)
+      // console.log(this.house);
       this.images = this.house.images.map((img: string) => {
         return {
           src: `${this.img_prefix}/${img}`,
@@ -44,8 +60,11 @@ export class HouseDetailComponent implements OnInit {
           height: '100%',
         };
       });
-
-      console.log(this.images)
+      for (let amenity in this.house.ameneties) {
+        if (this.house.ameneties[amenity])
+          this.ameneties.push(amenity.substring(3));
+      }
+      // console.log(this.images);
     });
   }
 
@@ -62,4 +81,25 @@ export class HouseDetailComponent implements OnInit {
   onClick(): void {
     this.nzImageService.preview(this.images);
   }
+
+  onDateChange(result: Date[]): void {
+    this.startDate = this.getFormattedDate(result[0]);
+    this.endDate = this.getFormattedDate(result[1]);
+    this.totalDays = differenceInCalendarDays(result[1], result[0]);
+    this.totalPrice = (this.totalDays+1) * this.house.price;
+  }
+
+    getFormattedDate(date: Date) {
+    var dd = String(date.getDate()).padStart(2, '0');
+    var mm = String(date.getMonth() + 1).padStart(2, '0'); //January is 0!
+    var yyyy = date.getFullYear();
+
+    return dd + '/' + mm + '/' + yyyy;
+    }
+  
+    disabledDate = (current: Date): boolean => {
+    // Can not select days before today and today
+    return differenceInCalendarDays(current, this.today) < 0;
+  }
+
 }
