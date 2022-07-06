@@ -17,6 +17,7 @@ import { NzPaginationModule } from 'ng-zorro-antd/pagination';
 import { NzCheckboxModule } from 'ng-zorro-antd/checkbox';
 import { NzSelectModule } from 'ng-zorro-antd/select';
 import { ImagekitioAngularModule } from 'imagekitio-angular';
+import { MapsComponent } from './maps/maps.component';
 
 @NgModule({
   declarations: [
@@ -26,6 +27,7 @@ import { ImagekitioAngularModule } from 'imagekitio-angular';
     ErrorComponent,
     SpinnerComponent,
     CounterComponent,
+    MapsComponent,
   ],
   imports: [
     CommonModule,
@@ -54,6 +56,7 @@ import { ImagekitioAngularModule } from 'imagekitio-angular';
     SpinnerComponent,
     CounterComponent,
     ImagekitioAngularModule,
+    MapsComponent
   ],
 })
 export class SharedModule {}

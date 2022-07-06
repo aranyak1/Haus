@@ -42,6 +42,7 @@ export class HouseDetailComponent implements OnInit {
   img_prefix = env.Imagekitio.urlEndpoint + '/homes';
   @ViewChild(NzCarouselComponent, { static: false })
   carousel!: NzCarouselComponent;
+  houseCoordinates:any = []
   constructor(
     private nzImageService: NzImageService,
     private route: ActivatedRoute,
@@ -52,7 +53,9 @@ export class HouseDetailComponent implements OnInit {
     this.id = this.route.snapshot.paramMap.get('id')!;
     this.houseService.getHouseById(this.id).subscribe((res: any) => {
       this.house = res.data.data;
-      // console.log(this.house);
+      console.log(this.house);
+      //initialise houseCoordinates so we can display it in map
+      this.houseCoordinates = this.house.location.coordinates;
       this.images = this.house.images.map((img: string) => {
         return {
           src: `${this.img_prefix}/${img}`,

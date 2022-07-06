@@ -10,6 +10,7 @@ export const environment = {
     urlEndpoint: 'https://ik.imagekit.io/mu8g4or2k',
     authenticationEndpoint: 'http://localhost:8080/auth',
   },
+  mapApiKey: 'S1bi375N577V4pv9zZMq',
   production: false,
 };
 
