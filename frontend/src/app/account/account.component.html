@@ -1,2 +1,13 @@
-<p>in account</p>
-<router-outlet></router-outlet> 
+<section class="mx-4 my-2">
+  <aside class="el-center">
+    <div class="mx-2 my-1" *ngFor="let item of buttons">
+      <img src="assets/images/{{item?.svg}}" alt="">
+      <button class="ml-1"  (click)="navigate(item?.route)">
+        {{ item?.name }}
+      </button>
+    </div>
+  </aside>
+  <div class="profile">
+    <router-outlet></router-outlet>
+  </div>
+</section>

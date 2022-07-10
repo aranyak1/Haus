@@ -16,6 +16,7 @@ import { NzIconModule } from 'ng-zorro-antd/icon';
 import { NzPaginationModule } from 'ng-zorro-antd/pagination';
 import { NzCheckboxModule } from 'ng-zorro-antd/checkbox';
 import { NzSelectModule } from 'ng-zorro-antd/select';
+import { NzMessageModule } from 'ng-zorro-antd/message';
 import { ImagekitioAngularModule } from 'imagekitio-angular';
 import { MapsComponent } from './maps/maps.component';
 
@@ -39,6 +40,7 @@ import { MapsComponent } from './maps/maps.component';
     NzIconModule,
     NzPaginationModule,
     NzSelectModule,
+    NzMessageModule,
     ReactiveFormsModule,
     FormsModule,
     ImagekitioAngularModule,
@@ -50,6 +52,7 @@ import { MapsComponent } from './maps/maps.component';
     NzDatePickerModule,
     NzCheckboxModule,
     NzSelectModule,
+    NzMessageModule,
     FooterComponent,
     HeaderComponent,
     SearchBarComponent,

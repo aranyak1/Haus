@@ -17,6 +17,7 @@ import { environment } from '../environments/environment';
 import { HomeComponent } from './home/home.component';
 import { HousesModule } from './houses/houses.module';
 import { AccountModule } from './account/account.module';
+
 registerLocaleData(en);
 
 @NgModule({

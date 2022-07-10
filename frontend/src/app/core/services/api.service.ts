@@ -12,22 +12,34 @@ export class ApiService {
   public get(path: string, options?: any) {
     return this.http
       .get(`${environment.apiUrl}${environment.apiVersion}${path}`, options)
-      .pipe(catchError((err) => {
-        console.log(err);
-        return throwError(() => new Error(err.error));
-      }));
+      .pipe(
+        catchError((err) => {
+          console.log(err);
+          return throwError(() => new Error(err.error));
+        })
+      );
   }
   public post(path: string, data: any, options?: any) {
     return this.http.post(path, data, options);
   }
   public patch(path: string, data: any, options?: any) {
-    return this.http.patch(path, data, options);
+    return this.http
+      .patch(
+        `${environment.apiUrl}${environment.apiVersion}${path}`,
+        data,
+        options
+      )
+      .pipe(
+        catchError((err) => {
+          console.log(err);
+          return throwError(() => new Error(err.error));
+        })
+      );
   }
   public delete(path: string, options?: any) {
     return this.http.delete(path, options);
   }
 }
-function err(err: any): import("rxjs").OperatorFunction<ArrayBuffer, unknown> {
+function err(err: any): import('rxjs').OperatorFunction<ArrayBuffer, unknown> {
   throw new Error('Function not implemented.');
 }
-

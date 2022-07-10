@@ -1,1 +1,122 @@
-<p>my-profile works!</p>
+<div class="profile el-center mx-3 my-3">
+  <div class="profile-img mx-2">
+    <h3>Profile</h3>
+    <img src="{{ img_prefix }}/{{ user.photo }}" alt="" />
+    <form
+      ngNativeValidate
+      #imgForm="ngForm"
+      (ngSubmit)="onSubmit(imgForm)"
+      class="flex-c"
+    >
+      <p >
+        <label for="firstName">First Name</label>
+        <input
+          nz-input
+          type="text"
+          id="firstName"
+          name="firstName"
+          placeholder="Your Firstname"
+          [(ngModel)]="user.firstName"
+        />
+      </p>
+
+      <p>
+        <label for="lastName">Last Name</label>
+        <input
+          nz-input
+          type="text"
+          id="lastName"
+          name="lastName"
+          placeholder="Your Lastname"
+          [(ngModel)]="user.lastName"
+        />
+      </p>
+        <label for="description">Description</label>
+        <textarea
+          nz-input
+          type="text"
+          id="description"
+          name="description"
+          placeholder="Your Description"
+          [(ngModel)]="user.description"
+        ></textarea>
+      <p>
+
+      </p>
+
+
+
+      <p>
+        <button class="button-p w-full" type="submit">Save Details</button>
+      </p>
+    </form>
+  </div>
+
+  <div class="profile-details mx-2">
+    <h3>Details</h3>
+        <form
+      ngNativeValidate
+      #detailsForm="ngForm"
+      (ngSubmit)="onSubmit(detailsForm)"
+      class="flex-c"
+    >
+          <p>
+        <label for="email">Email </label>
+        <input
+          nz-input
+          type="email"
+          id="email"
+          name="email"
+          placeholder="Your Email"
+          [(ngModel)]="user.email"
+        />
+      </p>
+       <p >
+        <label for="phoneNo">Phone No </label>
+        <input
+          nz-input
+          type="text"
+          id="phoneNo"
+          name="phoneNo"
+          placeholder="Your Phone No"
+          [(ngModel)]="user.phoneNo"
+        />
+      </p>
+            <p>
+        <button class="button-p w-full" type="submit">Save Details</button>
+      </p>
+      </form>
+    <h3 class="mt-4">Change Password</h3>
+        <form
+      ngNativeValidate
+      #passwordForm="ngForm"
+      (ngSubmit)="onSubmit(passwordForm)"
+      class="flex-c"
+    >
+     <p >
+        <label for="currentPassword">Current Password </label>
+        <input
+          nz-input
+          type="password"
+          id="currentPassword"
+          name="currentPassword"
+          placeholder="*********"
+        [(ngModel)]="password.currentPassword"        />
+      </p>
+       <p >
+        <label for="newPassword">New Password </label>
+        <input
+          nz-input
+          type="password"
+          id="newPassword"
+          name="newPassword"
+          placeholder="*********"
+              [(ngModel)]="password.newPassword"   
+        />
+      </p>
+            <p>
+        <button class="button-p w-full" type="submit">Change Password</button>
+      </p>
+      </form>
+</div>
+</div>

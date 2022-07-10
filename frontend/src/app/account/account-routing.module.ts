@@ -10,9 +10,7 @@ const routes: Routes = [
     path: 'account',
     component:AccountComponent,
     children: [
-      {
-        path: 'users/:id/profile', component: MyProfileComponent
-      },
+      { path: 'users/:id/profile', component: MyProfileComponent   },
       { path: 'users/:id/bookings', component: MyBookingsComponent },
       { path: 'users/:id/listings', component: MyListingsComponent },]
   }
