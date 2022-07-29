@@ -45,14 +45,14 @@ export class HouseSearchComponent implements OnInit {
     console.log(index);
     this.queryParams.page = index;
     this.currPage = index;
-    this.router.navigate([], { queryParams: this.queryParams });
+    this.navigateWithQueryParams();
   }
 
   changeTotalItems(data: any) {
     // add query parameter ?page=1 to url
     if (data > 0) {
       // this.queryParams.page = 1;
-      this.router.navigate([], { queryParams: this.queryParams });
+      this.navigateWithQueryParams();
     }
     this.totalItems = data;
 
@@ -68,20 +68,62 @@ export class HouseSearchComponent implements OnInit {
   }
 
   //executed when ever sort by dropdown changes
-  sortByValueChanged(value: any)
-  {
-    console.log(value)
+  sortByValueChanged(value: any) {
+    if (value == 'relevance') {
+      delete this.queryParams.sort;
+    } else {
+      this.queryParams.sort = value;
+    }
+    this.queryParams.page = 1;
+    this.currPage = 1;
+    this.navigateWithQueryParams();
   }
 
-  log(x: any) {
-    console.log(x);
+  // filter houses based on rating, amenities , price
+  filter(filterObj: any) {
+    console.log(filterObj);
+    let filterType = filterObj[0].filterType;
+    if (filterType == 'ratingsAverage') {
+      let ratingsAverageSelected = false;
+      let ratingsMin = Number.MAX_VALUE;
+      for (let item of filterObj) {
+        if (item.checked) {
+          ratingsAverageSelected = true;
+          if (item.value < ratingsMin) {
+            ratingsMin = item.value;
+          }
+        }
+      }
+      // if atlest one filter  in ratings is selected
+      if (ratingsAverageSelected) {
+        this.queryParams[`ratingsAverage[gte]`] = ratingsMin;
+      } else {
+        delete this.queryParams[`ratingsAverage[gte]`];
+      }
+    } else if (filterType === 'price') {
+      let priceSelected = false;
+      let priceMin = 0,
+        priceMax = Number.MAX_VALUE;
+      for (let item of filterObj) {
+        if (item.checked) {
+          priceSelected = true;
+          [priceMin, priceMax] = item.split('-');
+        }
+      }
+    } else {
+    }
+    // after filtering go back to page 1
+    this.queryParams.page = 1;
+    this.currPage = 1;
+    this.navigateWithQueryParams();
   }
 
   populateFilterRatings() {
     for (let rating = 4; rating >= 1; rating--) {
       this.ratingsCheckboxGroup.push({
+        filterType: 'ratingsAverage',
         label: `${rating} ⭐ & up`,
-        value: `${rating}star`,
+        value: rating,
         checked: false,
       });
     }
@@ -102,6 +144,7 @@ export class HouseSearchComponent implements OnInit {
         tempValue = `${this.prices[i - 1]}-${this.prices[i]}`;
       }
       this.pricingCheckboxGroup.push({
+        filterType: 'price',
         label: tempLabel,
         value: tempValue,
         checked: false,
@@ -118,6 +161,7 @@ export class HouseSearchComponent implements OnInit {
         amenityLabel = this.titleCase(amenity);
       }
       this.amenetiesCheckboxGroup.push({
+        filterType: 'amenities',
         label: amenityLabel,
         value: amenity.split(' ').join('-'),
         checked: false,
@@ -133,5 +177,10 @@ export class HouseSearchComponent implements OnInit {
         return word.charAt(0).toUpperCase() + word.slice(1);
       });
     return str.join(' ');
+  }
+
+  navigateWithQueryParams() {
+    console.log(this.queryParams);
+    this.router.navigate([], { queryParams: this.queryParams });
   }
 }

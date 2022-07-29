@@ -4,23 +4,23 @@
     <h5>Rating</h5>
     <nz-checkbox-group
       [(ngModel)]="ratingsCheckboxGroup"
-      (ngModelChange)="log(ratingsCheckboxGroup)"
+      (ngModelChange)="filter(ratingsCheckboxGroup)"
     ></nz-checkbox-group>
     <br />
     <h5>Pricing</h5>
     <nz-checkbox-group
       [(ngModel)]="pricingCheckboxGroup"
-      (ngModelChange)="log(pricingCheckboxGroup)"
+      (ngModelChange)="filter(pricingCheckboxGroup)"
     ></nz-checkbox-group>
     <br />
     <h5>Amenities</h5>
     <nz-checkbox-group
       [(ngModel)]="amenetiesCheckboxGroup"
-      (ngModelChange)="log(amenetiesCheckboxGroup)"
+      (ngModelChange)="filter(amenetiesCheckboxGroup)"
     ></nz-checkbox-group>
   </aside>
   <section class="el-center w-full">
-    <nz-select ngModel="relevance" (ngModelChange)="sortByValueChanged($event)" >
+    <nz-select ngModel="relevance" (ngModelChange)="sortByValueChanged($event)">
       <nz-option nzValue="relevance" nzLabel="Sort by relevance"></nz-option>
       <nz-option
         nzValue="price"
