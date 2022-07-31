@@ -184,7 +184,7 @@ export class HouseSearchComponent implements OnInit {
         this.queryParams[`price[lte]`] = priceMax;
       } else {
         delete this.queryParams[`price[gte]`];
-        delete this.queryParams[`price[gte]`];
+        delete this.queryParams[`price[lte]`];
         delete this.queryParams.priceState;
       }
     } else {
