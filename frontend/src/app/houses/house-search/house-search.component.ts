@@ -8,16 +8,17 @@ import { SearchBarService } from 'src/app/core/services/search-bar.service';
   styleUrls: ['./house-search.component.scss'],
 })
 export class HouseSearchComponent implements OnInit {
-  sortBy = null;
+  sortBy: any = 'relevance';
   initialLoad = true;
   totalItems = 0;
   currPage = 1;
   queryParams: any = { page: 1 };
   prices = [500, 1000, 1500, 5000];
-  ameneties = ['wifi', 'ac', 'TV', 'Kitchen', 'Geyser'];
+  ameneties = ['Tv', 'Kitchen', 'Wifi', 'Ac', 'Geyser'];
+  roomType = ['private', 'shared'];
   ratingsCheckboxGroup: any = [];
   pricingCheckboxGroup: any = [];
-  amenetiesCheckboxGroup: any = [];
+  roomCheckboxGroup: any = [];
   constructor(
     private searchBarService: SearchBarService,
     private router: Router,
@@ -32,10 +33,46 @@ export class HouseSearchComponent implements OnInit {
     searchBarService.showHeaderSearchBar();
     this.populateFilterRatings();
     this.populateFilterPrices();
-    this.populateFilterAmeneties();
+    this.populateFilterRoomType();
+    // this.populateFilterAmeneties();
   }
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    if (this.route.snapshot.queryParamMap.get('sort') != null) {
+      this.sortBy = this.route.snapshot.queryParamMap.get('sort');
+      this.sortByValueChanged(this.sortBy);
+    }
+
+    if (this.route.snapshot.queryParamMap.get('ratingsAverageState') != null) {
+      let ratingsState = this.route.snapshot.queryParamMap
+        .get('ratingsAverageState')
+        ?.split(',');
+      this.ratingsCheckboxGroup.forEach((obj: any) => {
+        obj.checked = ratingsState?.includes(obj.value.toString());
+      });
+      this.filter(this.ratingsCheckboxGroup);
+    }
+
+    if (this.route.snapshot.queryParamMap.get('priceState') != null) {
+      let pricingState = this.route.snapshot.queryParamMap
+        .get('priceState')
+        ?.split(',');
+      this.pricingCheckboxGroup.forEach((obj: any) => {
+        obj.checked = pricingState?.includes(obj.value.toString());
+      });
+      this.filter(this.pricingCheckboxGroup);
+    }
+
+    if (this.route.snapshot.queryParamMap.get('homeType') != null) {
+      let roomState = this.route.snapshot.queryParamMap
+        .get('roomState')
+        ?.split(',');
+      this.roomCheckboxGroup.forEach((obj: any) => {
+        obj.checked = roomState?.includes(obj.value.toString());
+      });
+      this.filter(this.roomCheckboxGroup);
+    }
+  }
 
   ngOnDestroy(): void {
     this.searchBarService.hideHeaderSearchBar();
@@ -84,10 +121,16 @@ export class HouseSearchComponent implements OnInit {
     console.log(filterObj);
     let filterType = filterObj[0].filterType;
     if (filterType == 'ratingsAverage') {
+      let ratingsAverageState = '';
       let ratingsAverageSelected = false;
       let ratingsMin = Number.MAX_VALUE;
       for (let item of filterObj) {
         if (item.checked) {
+          if (ratingsAverageState == '') {
+            ratingsAverageState += item.value;
+          } else {
+            ratingsAverageState += ',' + item.value;
+          }
           ratingsAverageSelected = true;
           if (item.value < ratingsMin) {
             ratingsMin = item.value;
@@ -96,26 +139,92 @@ export class HouseSearchComponent implements OnInit {
       }
       // if atlest one filter  in ratings is selected
       if (ratingsAverageSelected) {
+        this.queryParams.ratingsAverageState = ratingsAverageState;
         this.queryParams[`ratingsAverage[gte]`] = ratingsMin;
       } else {
         delete this.queryParams[`ratingsAverage[gte]`];
+        delete this.queryParams.ratingsAverageState;
       }
     } else if (filterType === 'price') {
       let priceSelected = false;
-      let priceMin = 0,
-        priceMax = Number.MAX_VALUE;
+      let priceState = '';
+      let priceMin = Number.MAX_SAFE_INTEGER,
+        priceMax = -1;
       for (let item of filterObj) {
         if (item.checked) {
           priceSelected = true;
-          [priceMin, priceMax] = item.split('-');
+          if (priceState == '') {
+            priceState += item.value;
+          } else {
+            priceState += ',' + item.value;
+          }
+          let prices = item.value.split('-').map((x: any) => {
+            if (x == 'lt') {
+              return 0;
+            }
+            if (x == 'gt') {
+              return Number.MAX_SAFE_INTEGER;
+            } else {
+              return parseInt(x);
+            }
+          });
+          console.log(prices);
+          if (prices[0] < priceMin) {
+            priceMin = prices[0];
+          }
+          if (prices[1] > priceMax) {
+            priceMax = prices[1];
+          }
         }
       }
+      // if atlest one filter  in price is selected
+      if (priceSelected) {
+        this.queryParams.priceState = priceState;
+        this.queryParams[`price[gte]`] = priceMin;
+        this.queryParams[`price[lte]`] = priceMax;
+      } else {
+        delete this.queryParams[`price[gte]`];
+        delete this.queryParams[`price[gte]`];
+        delete this.queryParams.priceState;
+      }
     } else {
+      let roomSelected = false;
+      let roomState = '';
+      let room: any[] = [];
+      for (let item of filterObj) {
+        if (item.checked) {
+          roomSelected = true;
+          if (roomState == '') {
+            roomState += item.value;
+          } else {
+            roomState += ',' + item.value;
+          }
+          room.push(item.value);
+        }
+      }
+      // if atlest one filter  in room is selected
+      if (roomSelected) {
+        this.queryParams.roomState = roomState;
+        if (room.length == 2) {
+          delete this.queryParams[`homeType`];
+        }
+        if (room.length == 1) {
+          this.queryParams[`homeType`] = room[0];
+        }
+      } else {
+        delete this.queryParams[`homeType`];
+        delete this.queryParams.roomState;
+      }
     }
     // after filtering go back to page 1
     this.queryParams.page = 1;
     this.currPage = 1;
     this.navigateWithQueryParams();
+  }
+
+  navigateWithQueryParams() {
+    console.log(this.queryParams);
+    this.router.navigate([], { queryParams: this.queryParams });
   }
 
   populateFilterRatings() {
@@ -138,7 +247,7 @@ export class HouseSearchComponent implements OnInit {
         tempValue = `lt-${this.prices[i]}`;
       } else if (i == this.prices.length) {
         tempLabel = `more than ₹${this.prices[i - 1]}`;
-        tempValue = `gt-${this.prices[i - 1]}`;
+        tempValue = `${this.prices[i - 1]}-gt`;
       } else {
         tempLabel = `₹${this.prices[i - 1]} - ₹${this.prices[i]}`;
         tempValue = `${this.prices[i - 1]}-${this.prices[i]}`;
@@ -152,22 +261,33 @@ export class HouseSearchComponent implements OnInit {
     }
   }
 
-  populateFilterAmeneties() {
-    for (let amenity of this.ameneties) {
-      let amenityLabel;
-      if (amenity.length < 3) {
-        amenityLabel = amenity.toUpperCase();
-      } else {
-        amenityLabel = this.titleCase(amenity);
-      }
-      this.amenetiesCheckboxGroup.push({
-        filterType: 'amenities',
-        label: amenityLabel,
-        value: amenity.split(' ').join('-'),
+  populateFilterRoomType() {
+    for (let i = 0; i < this.roomType.length; i++) {
+      this.roomCheckboxGroup.push({
+        filterType: 'room',
+        label: this.titleCase(this.roomType[i]),
+        value: this.roomType[i],
         checked: false,
       });
     }
   }
+
+  // populateFilterAmeneties() {
+  //   for (let amenity of this.ameneties) {
+  //     let amenityLabel;
+  //     if (amenity.length < 3) {
+  //       amenityLabel = amenity.toUpperCase();
+  //     } else {
+  //       amenityLabel = this.titleCase(amenity);
+  //     }
+  //     this.amenetiesCheckboxGroup.push({
+  //       filterType: 'amenities',
+  //       label: amenityLabel,
+  //       value: amenity.split(' ').join('-'),
+  //       checked: false,
+  //     });
+  //   }
+  // }
 
   titleCase(str: any) {
     str = str
@@ -177,10 +297,5 @@ export class HouseSearchComponent implements OnInit {
         return word.charAt(0).toUpperCase() + word.slice(1);
       });
     return str.join(' ');
-  }
-
-  navigateWithQueryParams() {
-    console.log(this.queryParams);
-    this.router.navigate([], { queryParams: this.queryParams });
   }
 }

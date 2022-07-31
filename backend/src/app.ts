@@ -3,7 +3,7 @@ import cors from 'cors';
 import homeRouter from './routes/homeRoutes';
 import userRouter from './routes/userRoutes';
 
-const app = express();
+const app = express(); 
 
 app.enable('trust proxy');
 

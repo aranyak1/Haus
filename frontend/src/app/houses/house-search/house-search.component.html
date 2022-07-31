@@ -13,14 +13,19 @@
       (ngModelChange)="filter(pricingCheckboxGroup)"
     ></nz-checkbox-group>
     <br />
-    <h5>Amenities</h5>
+      <h5>Room Type</h5>
+    <nz-checkbox-group
+      [(ngModel)]="roomCheckboxGroup"
+      (ngModelChange)="filter(roomCheckboxGroup)"
+    ></nz-checkbox-group>
+    <!-- <h5>Amenities</h5>
     <nz-checkbox-group
       [(ngModel)]="amenetiesCheckboxGroup"
       (ngModelChange)="filter(amenetiesCheckboxGroup)"
-    ></nz-checkbox-group>
+    ></nz-checkbox-group> -->
   </aside>
   <section class="el-center w-full">
-    <nz-select ngModel="relevance" (ngModelChange)="sortByValueChanged($event)">
+    <nz-select ngModel="{{sortBy}}" (ngModelChange)="sortByValueChanged($event)">
       <nz-option nzValue="relevance" nzLabel="Sort by relevance"></nz-option>
       <nz-option
         nzValue="price"

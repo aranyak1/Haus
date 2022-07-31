@@ -12,15 +12,23 @@ export class APIFeatures {
     const excludedFields = ['page', 'sort', 'limit', 'fields'];
     excludedFields.forEach(el => delete queryObj[el]);
 
+    // remove state fiels
+    for (let el in queryObj) {
+      console.log(el);
+      if (el.trim().endsWith('State')) {
+        delete queryObj[`${el}`];
+      }
+    }
+
     // Advanced filtering
     let queryStr = JSON.stringify(queryObj);
     queryStr = queryStr.replace(/\b(gte|gt|lte|lt)\b/g, match => `$${match}`);
-
+    console.log(queryStr);
     this.query = this.query.find(JSON.parse(queryStr));
     return this;
   }
-    
-    sort() {
+
+  sort() {
     if (this.queryString.sort) {
       const sortBy = this.queryString.sort.split(',').join(' ');
       this.query = this.query.sort(sortBy);
@@ -52,4 +60,3 @@ export class APIFeatures {
     return this;
   }
 }
-
