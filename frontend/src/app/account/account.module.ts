@@ -7,6 +7,7 @@ import { AccountComponent } from './account.component';
 import { MyBookingsComponent } from './my-bookings/my-bookings.component';
 import { MyListingsComponent } from './my-listings/my-listings.component';
 import { MyProfileComponent } from './my-profile/my-profile.component';
+import { HousesModule } from '../houses/houses.module';
 import { SharedModule } from '@shared/shared.module';
 
 @NgModule({
@@ -16,6 +17,6 @@ import { SharedModule } from '@shared/shared.module';
     MyBookingsComponent,
     MyListingsComponent,
   ],
-  imports: [CommonModule, FormsModule,SharedModule, AccountRoutingModule],
+  imports: [CommonModule, FormsModule,SharedModule,HousesModule, AccountRoutingModule],
 })
 export class AccountModule {}

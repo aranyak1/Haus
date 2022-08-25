@@ -2,6 +2,7 @@ import express from 'express';
 import cors from 'cors';
 import homeRouter from './routes/homeRoutes';
 import userRouter from './routes/userRoutes';
+import bookingRouter from './routes/bookingRoutes';
 
 const app = express(); 
 
@@ -40,6 +41,8 @@ app.use(express.json());
 
 app.use('/api/v1/homes', homeRouter);
 app.use('/api/v1/users', userRouter);
+app.use('/api/v1/bookings', bookingRouter);
+
 // app.all('*', (req, res, next) => {
 //   next(new AppError(`Can't find ${req.originalUrl} on this server!`, 404));
 // });

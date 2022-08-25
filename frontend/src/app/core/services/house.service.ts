@@ -34,8 +34,13 @@ export class HouseService {
   // getAllHouses() {
   //   return this.apiService.get('homes');
   // }
+  getHouseByUserId(id: string) {
+        return this.apiService.get(`homes?owner=${id}`);
+  }
 
-  getHouseById(id:string) {
+  getHouseById(id: string) {
     return this.apiService.get(`homes/${id}`);
   }
 }
+
+

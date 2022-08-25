@@ -26,5 +26,6 @@ import { HouseDetailComponent } from './house-detail/house-detail.component';
     NzCarouselModule,
     NzImageModule,
   ],
+  exports: [HouseListItemComponent],
 })
 export class HousesModule {}

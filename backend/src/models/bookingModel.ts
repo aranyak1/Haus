@@ -5,11 +5,13 @@ const bookingSchema = new Schema(
   {
     userId: {
       type: mongoose.Types.ObjectId,
+      ref:'User',
       required: [true, 'A booking must have a user id'],
     },
-    roomId: {
+    homeId: {
       type: mongoose.Types.ObjectId,
-      required: [true, 'A booking must have a room id'],
+      ref:'Home',
+      required: [true, 'A booking must have a home id'],
     },
     startDate: {
       type: Date,
@@ -35,12 +37,19 @@ const bookingSchema = new Schema(
       type: Date,
       default: Date.now,
     },
+    status: {
+      type: String,
+      default:'active',
+      enum:['active','cancelled']
+    }
   },
   {
     toJSON: { virtuals: true },
     toObject: { virtuals: true },
   },
 );
+
+bookingSchema.index({ userId: 1, homeId:1 , startDate:1 , endDate :1 });
 
 const Booking = model('Booking' ,bookingSchema);
 

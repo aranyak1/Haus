@@ -1,1 +1,7 @@
-<p>my-listings works!</p>
+<section class="el-center house-listing">
+  <div class="row">
+    <div class="flex-c" *ngFor="let house of listings">
+      <app-house-list-item [house]='house'></app-house-list-item>
+    </div>
+  </div>
+</section>
