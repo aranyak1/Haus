@@ -117,7 +117,7 @@ export class HouseDetailComponent implements OnInit {
     var mm = String(date.getMonth() + 1).padStart(2, '0'); //January is 0!
     var yyyy = date.getFullYear();
 
-    return dd + '/' + mm + '/' + yyyy;
+    return dd + '/' + mm + '/' + yyyy; 
   }
 
   disabledDate = (current: Date): boolean => {

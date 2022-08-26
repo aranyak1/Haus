@@ -34,7 +34,7 @@ export class MyProfileComponent implements OnInit {
     this.id = this.route.snapshot.paramMap.get('id')!;
     this.userService.getUserById(this.id).subscribe((res: any) => {
       this.user = res.data.data;
-      console.log(res);
+      // console.log(res);
     });
   }
 

@@ -6,7 +6,11 @@ import { ApiService } from './api.service';
 })
 export class BookingService {
   private userId = '626bcae1055400d7fe01fd84'; // change after implementing authentication
-  constructor(private apiService:ApiService) {}
+  constructor(private apiService: ApiService) {}
+
+  getBookingsByUserId() {
+    return this.apiService.get(`bookings?userId=${this.userId}`);
+  }
 
   createBooking(data: any) {
     data.userId = this.userId;

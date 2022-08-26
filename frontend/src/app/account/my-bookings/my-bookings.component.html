@@ -1,1 +1,21 @@
-<p>my-bookings works!</p>
+<section class="el-center house-listing">
+  <div class="row">
+    <div class="flex-c" *ngFor="let booking of bookings">
+      <div class="card flex">
+        <div class="card-details">
+          <h5 class="card-title">{{ booking.homeTitle | titlecase }}</h5>
+          <p class="house-locality">
+            {{ booking.city | titlecase }},{{ booking.state | titlecase }}
+          </p>
+          <div class="house-details">
+            <p class="pr-3">Start Date - {{ getFormattedDate(booking.startDate) }}</p>
+            <p class="pr-3">End Date - {{ getFormattedDate(booking.endDate) }}</p>
+          </div>
+          <div class="house-price">
+            <p class="card-price">Total Price - ₹{{ booking.total }} </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
