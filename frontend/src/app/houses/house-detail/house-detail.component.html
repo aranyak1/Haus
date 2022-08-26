@@ -90,7 +90,7 @@
         (ngModelChange)="onDateChange($event)"
       >
       </nz-range-picker>
-      <button class="button-p w-full">Book Room</button>
+      <button class="button-p w-full" (click)="bookHouse()">Book Room</button>
       <h5>Total Price = ₹ {{ totalPrice }}</h5>
     </div>
   </div>

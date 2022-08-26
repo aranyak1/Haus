@@ -20,7 +20,18 @@ export class ApiService {
       );
   }
   public post(path: string, data: any, options?: any) {
-    return this.http.post(path, data, options);
+    return this.http
+      .post(
+        `${environment.apiUrl}${environment.apiVersion}${path}`,
+        data,
+        options
+      )
+      .pipe(
+        catchError((err) => {
+          console.log(err);
+          return throwError(() => new Error(err.error));
+        })
+      );
   }
   public patch(path: string, data: any, options?: any) {
     return this.http

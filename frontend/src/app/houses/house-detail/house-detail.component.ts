@@ -1,11 +1,13 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { HouseService } from 'src/app/core/services/house.service';
+import { BookingService } from 'src/app/core/services/booking.service';
 import { NzCarouselComponent } from 'ng-zorro-antd/carousel';
 import { NzImageService } from 'ng-zorro-antd/image';
 import { environment as env } from 'src/environments/environment';
 import { differenceInCalendarDays } from 'date-fns';
 import { NzDatePickerSizeType } from 'ng-zorro-antd/date-picker';
+import { NzMessageService } from 'ng-zorro-antd/message';
 import { SearchBarService } from 'src/app/core/services/search-bar.service';
 
 @Component({
@@ -15,8 +17,8 @@ import { SearchBarService } from 'src/app/core/services/search-bar.service';
 })
 export class HouseDetailComponent implements OnInit {
   rangeSize: NzDatePickerSizeType = 'large';
-  startDate = '';
-  endDate = '';
+  startDate: any = null;
+  endDate: any = null;
   showSearchBarHeader = false;
   searchInputSize = 30;
   travellerInputSize = 20;
@@ -24,7 +26,7 @@ export class HouseDetailComponent implements OnInit {
   dateFormat = 'dd/MM/yyyy';
   today = new Date();
   totalPrice = 0;
-  ameneties:any = []
+  ameneties: any = [];
   private id: string = '';
   private images = [];
   private totalDays = 1;
@@ -42,11 +44,13 @@ export class HouseDetailComponent implements OnInit {
   img_prefix = env.Imagekitio.urlEndpoint + '/homes';
   @ViewChild(NzCarouselComponent, { static: false })
   carousel!: NzCarouselComponent;
-  houseCoordinates:any = []
+  houseCoordinates: any = [];
   constructor(
     private nzImageService: NzImageService,
+    private message:NzMessageService,
     private route: ActivatedRoute,
-    private houseService: HouseService
+    private houseService: HouseService,
+    private bookingService: BookingService
   ) {}
 
   ngOnInit(): void {
@@ -85,24 +89,39 @@ export class HouseDetailComponent implements OnInit {
     this.nzImageService.preview(this.images);
   }
 
-  onDateChange(result: Date[]): void {
-    this.startDate = this.getFormattedDate(result[0]);
-    this.endDate = this.getFormattedDate(result[1]);
-    this.totalDays = differenceInCalendarDays(result[1], result[0]);
-    this.totalPrice = (this.totalDays+1) * this.house.price;
+  bookHouse() {
+    console.log(this.date)
+    if (this.startDate != null && this.endDate != null) {
+      let data = {
+        homeId:this.id,
+        startDate: this.startDate,
+        endDate: this.endDate
+      }
+      this.bookingService.createBooking(data).subscribe((res) => {
+        this.message.create('success', `House booked succesfully!!`);
+        this.date = null;
+        this.totalPrice = 0
+      });
+    }
   }
 
-    getFormattedDate(date: Date) {
+  onDateChange(result: Date[]): void {
+    this.startDate = result[0];
+    this.endDate = result[1];
+    this.totalDays = differenceInCalendarDays(result[1], result[0]);
+    this.totalPrice = (this.totalDays + 1) * this.house.price;
+  }
+
+  getFormattedDate(date: Date) {
     var dd = String(date.getDate()).padStart(2, '0');
     var mm = String(date.getMonth() + 1).padStart(2, '0'); //January is 0!
     var yyyy = date.getFullYear();
 
     return dd + '/' + mm + '/' + yyyy;
-    }
-  
-    disabledDate = (current: Date): boolean => {
-    // Can not select days before today and today
-    return differenceInCalendarDays(current, this.today) < 0;
   }
 
+  disabledDate = (current: Date): boolean => {
+    // Can not select days before today and today
+    return differenceInCalendarDays(current, this.today) < 0;
+  };
 }
