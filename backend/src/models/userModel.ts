@@ -56,6 +56,13 @@ const userSchema = new Schema(
   //   }
 );
 
+// Virtual populate
+// userSchema.virtual('bookings', {
+//   ref: 'Booking',
+//   foreignField: 'userId',
+//   localField: '_id'
+// });
+
 const User = model('User', userSchema);
 
 export default User;
