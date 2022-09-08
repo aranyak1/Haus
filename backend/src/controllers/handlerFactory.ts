@@ -30,7 +30,6 @@ export const getOne = (Model: any, popOptions?: any) =>
 
 export const getAll = (Model: any) =>
   catchAsync(async (req: Request, res: Response, next: NextFunction) => {
-    // To allow for nested GET reviews on tour (hack)
     let filter = {};
 
     // this function chaining follows builder pattern

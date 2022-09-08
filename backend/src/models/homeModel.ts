@@ -114,6 +114,17 @@ homeSchema.index({ price: 1, ratingsAverage: -1 });
 homeSchema.index({ slug: 1 });
 homeSchema.index({ location: '2dsphere' });
 
+// Text Index for search functionality
+
+homeSchema.index({
+  title: 'text',
+  summary: 'text',
+  'address.locality': 'text',
+  'address.city': 'text',
+  'address.state': 'text',
+});
+
+
 // model defines a interface  to the database for creating, querying, updating, deleting records, etc.
 // a document is a instance of model
 const Home = model('Home', homeSchema);

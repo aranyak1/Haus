@@ -20,6 +20,15 @@ export class APIFeatures {
       }
     }
 
+    if (queryObj.searchQuery)
+    {
+      let searchText = queryObj.searchQuery;
+      delete queryObj.searchQuery;
+      queryObj.$text = { $search:searchText  }
+    }
+
+    console.log('queryObj', queryObj);
+
     // Advanced filtering
     let queryStr = JSON.stringify(queryObj);
     queryStr = queryStr.replace(/\b(gte|gt|lte|lt)\b/g, match => `$${match}`);
