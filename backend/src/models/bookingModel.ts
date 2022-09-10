@@ -18,7 +18,7 @@ const bookingSchema = new Schema(
     },
     homeTitle: String,
     city: String,
-    state:String,
+    state: String,
     startDate: {
       type: Date,
       required: [true, 'A booking must have a start date'],
@@ -45,10 +45,12 @@ const bookingSchema = new Schema(
     createdAt: {
       type: Date,
       default: Date.now,
+      select: false,
     },
     updatedAt: {
       type: Date,
       default: Date.now,
+      select: false,
     },
     status: {
       type: String,

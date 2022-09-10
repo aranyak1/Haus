@@ -1,9 +1,9 @@
 import { Component, OnInit,Input, SimpleChange, SimpleChanges } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
 import { differenceInCalendarDays } from 'date-fns';
 import { NzDatePickerSizeType } from 'ng-zorro-antd/date-picker';
 import { SearchBarService } from 'src/app/core/services/search-bar.service';
-
 
 @Component({
   selector: 'app-search-bar',
@@ -32,7 +32,7 @@ export class SearchBarComponent implements OnInit {
     }),
   });
 
-  constructor(private searchBarService: SearchBarService) {
+  constructor(private searchBarService: SearchBarService, private router:Router) {
     searchBarService.showSearchBarOnHeader$.subscribe(data => {
       if (data)
       {
@@ -83,6 +83,8 @@ export class SearchBarComponent implements OnInit {
   }
   onSubmit() {
     if (this.searchForm.status) {
+      this.searchBarService.setQuery(this.searchForm.value.searchQuery);
+      this.router.navigate(['/search']);
       console.log(this.searchForm.value);
     }
   }

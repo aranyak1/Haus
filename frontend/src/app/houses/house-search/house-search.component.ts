@@ -30,7 +30,7 @@ export class HouseSearchComponent implements OnInit {
     //   this.queryParams.page = +page!;
     // }
 
-    searchBarService.showHeaderSearchBar();
+    // searchBarService.showHeaderSearchBar();
     this.populateFilterRatings();
     this.populateFilterPrices();
     this.populateFilterRoomType();
@@ -38,6 +38,15 @@ export class HouseSearchComponent implements OnInit {
   }
 
   ngOnInit(): void {
+
+    this.searchBarService.getQuery().subscribe((query) => {
+      console.log('query',query)
+      if (query != '')
+      {
+        this.queryParams.searchQuery = query;
+        }
+    });
+
     if (this.route.snapshot.queryParamMap.get('sort') != null) {
       this.sortBy = this.route.snapshot.queryParamMap.get('sort');
       this.sortByValueChanged(this.sortBy);
@@ -75,7 +84,7 @@ export class HouseSearchComponent implements OnInit {
   }
 
   ngOnDestroy(): void {
-    this.searchBarService.hideHeaderSearchBar();
+    // this.searchBarService.hideHeaderSearchBar();
   }
 
   onPageIndexChange(index: number) {

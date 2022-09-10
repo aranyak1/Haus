@@ -14,6 +14,7 @@
         *ngFor="let city of cities"
         style="background-image:linear-gradient(to top, rgba(0, 0, 0, 0.397) 15%,rgba(255, 255, 255, 0) 25% 100%),url('assets/images/{{ city }}.jpg');"
         class="destination-city_card box-shadow-light"
+        (click)="navigateToSearch(city)"
       >
         <h4
           class="destination-city_name"

@@ -1,19 +1,32 @@
 import { Injectable } from '@angular/core';
 import { BehaviorSubject } from 'rxjs';
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class SearchBarService {
-  private showSearchBarOnHeader =new BehaviorSubject<boolean>(false);
+  private showSearchBarOnHeader = new BehaviorSubject<boolean>(false);
   public showSearchBarOnHeader$ = this.showSearchBarOnHeader.asObservable();
-  constructor() { 
-  }
-  hideHeaderSearchBar()
+  public query = new BehaviorSubject<string>('');
+  public query$ = this.query.asObservable();
+
+  constructor() { }
+  
+  getQuery()
   {
-    this.showSearchBarOnHeader.next(false);
+    return this.query$;
   }
-    showHeaderSearchBar()
+
+  setQuery(value: string)
   {
-    this.showSearchBarOnHeader.next(true);
+    this.query.next(value);
   }
+  // hideHeaderSearchBar()
+  // {
+  //   this.showSearchBarOnHeader.next(false);
+  // }
+  //   showHeaderSearchBar()
+  // {
+  //   this.showSearchBarOnHeader.next(true);
+  // }
 }
+

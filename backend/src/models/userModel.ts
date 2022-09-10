@@ -14,7 +14,7 @@ const userSchema = new Schema(
     gender: {
       type: String,
       required: [true, 'Please provide us your gender'],
-      enum:['male','female','other']
+      enum: ['male', 'female', 'other'],
     },
     description: String,
     phoneNo: String,
@@ -44,10 +44,12 @@ const userSchema = new Schema(
     createdAt: {
       type: Date,
       default: Date.now,
+      select: false,
     },
     updatedAt: {
       type: Date,
       default: Date.now,
+      select: false,
     },
   },
   //   {

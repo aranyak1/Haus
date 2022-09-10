@@ -21,12 +21,12 @@ const homeSchema = new Schema(
     homeType: {
       type: String,
       required: [true, 'A home must have a homeType'],
-      enum:['private','shared']
+      enum: ['private', 'shared'],
     },
     furnishing: {
       type: String,
       required: [true, 'A home must have a furnishing'],
-      enum:['furnished','semi-furnished','unfurnished']
+      enum: ['furnished', 'semi-furnished', 'unfurnished'],
     },
     price: {
       type: Number,
@@ -47,7 +47,7 @@ const homeSchema = new Schema(
     images: [String],
     totalOccupancy: {
       type: Number,
-      min:[1,'A house should have atleast one occupancy'],
+      min: [1, 'A house should have atleast one occupancy'],
       required: [true, 'A home must have total number of occupancy'],
     },
     totalBedrooms: {
@@ -89,10 +89,12 @@ const homeSchema = new Schema(
     createdAt: {
       type: Date,
       default: Date.now,
+      select: false,
     },
     updatedAt: {
       type: Date,
       default: Date.now,
+      select: false
     },
     location: {
       type: {
