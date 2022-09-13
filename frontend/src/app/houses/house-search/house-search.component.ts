@@ -24,6 +24,14 @@ export class HouseSearchComponent implements OnInit {
     private router: Router,
     private route: ActivatedRoute
   ) {
+    // this.route.queryParams.subscribe((params) => {
+    //   let page = params['page'];
+    //   if (page !== undefined && page !== null) {
+    //         this.currPage = +page!;
+    //       this.queryParams.page = +page!;
+    //   }
+    //   console.log(page);
+    // });
     // if (this.route.snapshot.queryParamMap.get('page') != null) {
     //     let page = this.route.snapshot.queryParamMap.get('page');
     //     this.currPage = +page!;
@@ -38,13 +46,11 @@ export class HouseSearchComponent implements OnInit {
   }
 
   ngOnInit(): void {
-
     this.searchBarService.getQuery().subscribe((query) => {
-      console.log('query',query)
-      if (query != '')
-      {
+      console.log('query', query);
+      if (query != '') {
         this.queryParams.searchQuery = query;
-        }
+      }
     });
 
     if (this.route.snapshot.queryParamMap.get('sort') != null) {
@@ -95,11 +101,6 @@ export class HouseSearchComponent implements OnInit {
   }
 
   changeTotalItems(data: any) {
-    // add query parameter ?page=1 to url
-    if (data > 0) {
-      // this.queryParams.page = 1;
-      this.navigateWithQueryParams();
-    }
     this.totalItems = data;
 
     if (
@@ -109,6 +110,11 @@ export class HouseSearchComponent implements OnInit {
       let page = this.route.snapshot.queryParamMap.get('page');
       this.currPage = +page!;
       this.queryParams.page = +page!;
+    }
+    // add query parameter ?page=1 to url
+    if (data > 0) {
+      // this.queryParams.page = 1;
+      this.navigateWithQueryParams();
     }
     this.initialLoad = false;
   }
