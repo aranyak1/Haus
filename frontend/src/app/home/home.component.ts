@@ -14,7 +14,7 @@ export class HomeComponent implements OnInit {
   ngOnInit(): void {}
 
   navigateToSearch(city:string) {
-    this.searchbarservice.setQuery(city);
-    this.router.navigate(['search']);
+    // this.searchbarservice.setQuery(city);
+    this.router.navigate(['/search'],{queryParams:{searchQuery :city,page:1}});
   }
 }

@@ -38,17 +38,28 @@ export class HouseSearchComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.searchBarService.getQuery().subscribe((query) => {
-      console.log('query', query);
-      if (query != '') {
-        this.queryParams.searchQuery = query;
+    // this.searchBarService.getQuery().subscribe((query) => {
+    //   console.log('query', query);
+    //   if (query != '') {
+    //     this.queryParams.searchQuery = query;
+    //   }
+    // });
+
+    this.route.queryParams.subscribe((params) => {
+      let searchQuery = params['searchQuery'];
+      // console.log('schqry', searchQuery);
+      if (
+        searchQuery !== undefined ||
+        searchQuery !== null ||
+        searchQuery != ''
+      ) {
+        this.queryParams.searchQuery = searchQuery;
+      } else {
+        delete this.queryParams.searchQuery;
       }
+      this.navigateWithQueryParams();
     });
 
-    // if (this.route.snapshot.queryParamMap.get('sort') != null) {
-    //   this.sortBy = this.route.snapshot.queryParamMap.get('sort');
-    //   this.sortByValueChanged(this.sortBy);
-    // }
 
     this.route.queryParams.subscribe((params) => {
       let sort = params['sort'];
@@ -113,6 +124,11 @@ export class HouseSearchComponent implements OnInit {
       }
     });
 
+    // if (this.route.snapshot.queryParamMap.get('sort') != null) {
+    //   this.sortBy = this.route.snapshot.queryParamMap.get('sort');
+    //   this.sortByValueChanged(this.sortBy);
+    // }
+
     // if (this.route.snapshot.queryParamMap.get('ratingsAverageState') != null) {
     //   let ratingsState = this.route.snapshot.queryParamMap
     //     .get('ratingsAverageState')
@@ -164,8 +180,9 @@ export class HouseSearchComponent implements OnInit {
         this.currPage = +page!;
         this.queryParams.page = +page!;
       } else {
-        this.currPage = 1;
-        this.queryParams.page = 1;
+        // this.currPage = 1;
+        // this.queryParams.page = 1;
+        delete this.queryParams.page;
       }
       console.log('sub', page);
       this.navigateWithQueryParams();
