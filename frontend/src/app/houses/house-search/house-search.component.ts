@@ -61,35 +61,87 @@ export class HouseSearchComponent implements OnInit {
       }
     });
 
-    if (this.route.snapshot.queryParamMap.get('ratingsAverageState') != null) {
-      let ratingsState = this.route.snapshot.queryParamMap
-        .get('ratingsAverageState')
-        ?.split(',');
-      this.ratingsCheckboxGroup.forEach((obj: any) => {
-        obj.checked = ratingsState?.includes(obj.value.toString());
-      });
-      this.filter(this.ratingsCheckboxGroup);
-    }
+    this.route.queryParams.subscribe((params) => {
+      let roomState = params['roomState'];
+      if (roomState !== null && roomState !== undefined) {
+        roomState = roomState.split(',');
+        this.roomCheckboxGroup.forEach((obj: any) => {
+          obj.checked = roomState?.includes(obj.value.toString());
+        });
+        this.filter(this.roomCheckboxGroup);
+      } else {
+        this.roomCheckboxGroup.forEach((obj: any) => {
+          obj.checked = false;
+        });
+        delete this.queryParams[`homeType`];
+        delete this.queryParams.roomState;
+      }
+    });
 
-    if (this.route.snapshot.queryParamMap.get('priceState') != null) {
-      let pricingState = this.route.snapshot.queryParamMap
-        .get('priceState')
-        ?.split(',');
-      this.pricingCheckboxGroup.forEach((obj: any) => {
-        obj.checked = pricingState?.includes(obj.value.toString());
-      });
-      this.filter(this.pricingCheckboxGroup);
-    }
+    this.route.queryParams.subscribe((params) => {
+      let pricingState = params['priceState'];
+      if (pricingState !== undefined && pricingState !== null) {
+        pricingState = pricingState.split(',');
+        this.pricingCheckboxGroup.forEach((obj: any) => {
+          obj.checked = pricingState?.includes(obj.value.toString());
+        });
+        this.filter(this.pricingCheckboxGroup);
+      } else {
+        this.pricingCheckboxGroup.forEach((obj: any) => {
+          obj.checked = false;
+        });
+        delete this.queryParams[`price[gte]`];
+        delete this.queryParams[`price[lte]`];
+        delete this.queryParams.priceState;
+      }
+    });
 
-    if (this.route.snapshot.queryParamMap.get('homeType') != null) {
-      let roomState = this.route.snapshot.queryParamMap
-        .get('roomState')
-        ?.split(',');
-      this.roomCheckboxGroup.forEach((obj: any) => {
-        obj.checked = roomState?.includes(obj.value.toString());
-      });
-      this.filter(this.roomCheckboxGroup);
-    }
+    this.route.queryParams.subscribe((params) => {
+      let ratingsState = params['ratingsAverageState'];
+      if (ratingsState !== undefined && ratingsState !== null) {
+        ratingsState = ratingsState.split(',');
+        this.ratingsCheckboxGroup.forEach((obj: any) => {
+          obj.checked = ratingsState?.includes(obj.value.toString());
+        });
+        this.filter(this.ratingsCheckboxGroup);
+      } else {
+        this.ratingsCheckboxGroup.forEach((obj: any) => {
+          obj.checked = false;
+        });
+        delete this.queryParams[`ratingsAverage[gte]`];
+        delete this.queryParams.ratingsAverageState;
+      }
+    });
+
+    // if (this.route.snapshot.queryParamMap.get('ratingsAverageState') != null) {
+    //   let ratingsState = this.route.snapshot.queryParamMap
+    //     .get('ratingsAverageState')
+    //     ?.split(',');
+    //   this.ratingsCheckboxGroup.forEach((obj: any) => {
+    //     obj.checked = ratingsState?.includes(obj.value.toString());
+    //   });
+    //   this.filter(this.ratingsCheckboxGroup);
+    // }
+
+    // if (this.route.snapshot.queryParamMap.get('priceState') != null) {
+    //   let pricingState = this.route.snapshot.queryParamMap
+    //     .get('priceState')
+    //     ?.split(',');
+    //   this.pricingCheckboxGroup.forEach((obj: any) => {
+    //     obj.checked = pricingState?.includes(obj.value.toString());
+    //   });
+    //   this.filter(this.pricingCheckboxGroup);
+    // }
+
+    // if (this.route.snapshot.queryParamMap.get('homeType') != null) {
+    //   let roomState = this.route.snapshot.queryParamMap
+    //     .get('roomState')
+    //     ?.split(',');
+    //   this.roomCheckboxGroup.forEach((obj: any) => {
+    //     obj.checked = roomState?.includes(obj.value.toString());
+    //   });
+    //   this.filter(this.roomCheckboxGroup);
+    // }
   }
 
   ngOnDestroy(): void {
@@ -148,7 +200,7 @@ export class HouseSearchComponent implements OnInit {
     this.navigateWithQueryParams();
   }
 
-  // filter houses based on rating, amenities , price
+  // filter houses based on rating, amenities , price,homeType
   filter(filterObj: any) {
     console.log(filterObj);
     let filterType = filterObj[0].filterType;
