@@ -24,14 +24,6 @@ export class HouseSearchComponent implements OnInit {
     private router: Router,
     private route: ActivatedRoute
   ) {
-    // this.route.queryParams.subscribe((params) => {
-    //   let page = params['page'];
-    //   if (page !== undefined && page !== null) {
-    //         this.currPage = +page!;
-    //       this.queryParams.page = +page!;
-    //   }
-    //   console.log(page);
-    // });
     // if (this.route.snapshot.queryParamMap.get('page') != null) {
     //     let page = this.route.snapshot.queryParamMap.get('page');
     //     this.currPage = +page!;
@@ -94,7 +86,7 @@ export class HouseSearchComponent implements OnInit {
   }
 
   onPageIndexChange(index: number) {
-    console.log(index);
+    console.log('onpageindexchange',index);
     this.queryParams.page = index;
     this.currPage = index;
     this.navigateWithQueryParams();
@@ -103,10 +95,24 @@ export class HouseSearchComponent implements OnInit {
   changeTotalItems(data: any) {
     this.totalItems = data;
 
+        this.route.queryParams.subscribe((params) => {
+          let page = params['page'];
+          if (page !== undefined && page !== null) {
+            this.currPage = +page!;
+            this.queryParams.page = +page!;
+          } else {
+            this.currPage = 1;
+            this.queryParams.page = 1;
+          }
+          console.log('sub', page);
+          this.navigateWithQueryParams();
+        });
+
     if (
       this.route.snapshot.queryParamMap.get('page') != null &&
       this.initialLoad == true
     ) {
+    console.log('changetotalitems',this.currPage,this.queryParams);
       let page = this.route.snapshot.queryParamMap.get('page');
       this.currPage = +page!;
       this.queryParams.page = +page!;
@@ -238,7 +244,7 @@ export class HouseSearchComponent implements OnInit {
   }
 
   navigateWithQueryParams() {
-    console.log(this.queryParams);
+    console.log('navigate with query params',this.queryParams);
     this.router.navigate([], { queryParams: this.queryParams });
   }
 
