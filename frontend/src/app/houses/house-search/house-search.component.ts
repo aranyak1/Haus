@@ -45,10 +45,21 @@ export class HouseSearchComponent implements OnInit {
       }
     });
 
-    if (this.route.snapshot.queryParamMap.get('sort') != null) {
-      this.sortBy = this.route.snapshot.queryParamMap.get('sort');
-      this.sortByValueChanged(this.sortBy);
-    }
+    // if (this.route.snapshot.queryParamMap.get('sort') != null) {
+    //   this.sortBy = this.route.snapshot.queryParamMap.get('sort');
+    //   this.sortByValueChanged(this.sortBy);
+    // }
+
+    this.route.queryParams.subscribe((params) => {
+      let sort = params['sort'];
+      if (sort !== undefined && sort != null) {
+        this.sortBy = sort;
+        this.sortByValueChanged(this.sortBy);
+      } else {
+        delete this.queryParams.sort;
+        this.sortBy = 'relevance';
+      }
+    });
 
     if (this.route.snapshot.queryParamMap.get('ratingsAverageState') != null) {
       let ratingsState = this.route.snapshot.queryParamMap
@@ -86,7 +97,7 @@ export class HouseSearchComponent implements OnInit {
   }
 
   onPageIndexChange(index: number) {
-    console.log('onpageindexchange',index);
+    console.log('onpageindexchange', index);
     this.queryParams.page = index;
     this.currPage = index;
     this.navigateWithQueryParams();
@@ -95,24 +106,24 @@ export class HouseSearchComponent implements OnInit {
   changeTotalItems(data: any) {
     this.totalItems = data;
 
-        this.route.queryParams.subscribe((params) => {
-          let page = params['page'];
-          if (page !== undefined && page !== null) {
-            this.currPage = +page!;
-            this.queryParams.page = +page!;
-          } else {
-            this.currPage = 1;
-            this.queryParams.page = 1;
-          }
-          console.log('sub', page);
-          this.navigateWithQueryParams();
-        });
+    this.route.queryParams.subscribe((params) => {
+      let page = params['page'];
+      if (page !== undefined && page !== null) {
+        this.currPage = +page!;
+        this.queryParams.page = +page!;
+      } else {
+        this.currPage = 1;
+        this.queryParams.page = 1;
+      }
+      console.log('sub', page);
+      this.navigateWithQueryParams();
+    });
 
     if (
       this.route.snapshot.queryParamMap.get('page') != null &&
       this.initialLoad == true
     ) {
-    console.log('changetotalitems',this.currPage,this.queryParams);
+      console.log('changetotalitems', this.currPage, this.queryParams);
       let page = this.route.snapshot.queryParamMap.get('page');
       this.currPage = +page!;
       this.queryParams.page = +page!;
@@ -244,7 +255,7 @@ export class HouseSearchComponent implements OnInit {
   }
 
   navigateWithQueryParams() {
-    console.log('navigate with query params',this.queryParams);
+    console.log('navigate with query params', this.queryParams);
     this.router.navigate([], { queryParams: this.queryParams });
   }
 
