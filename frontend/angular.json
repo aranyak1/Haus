@@ -30,9 +30,9 @@
               "src/favicon.ico",
               "src/assets",
               {
-                "glob": "**/*",
-                "input": "./node_modules/@ant-design/icons-angular/src/inline-svg/",
-                "output": "/assets/"
+                "glob": "_redirects",
+                "input": "src",
+                "output": "/"
               }
             ],
             "styles": ["src/theme.less", "src/styles.scss"],
