@@ -10,25 +10,25 @@
       class="flex-c"
     >
       <p *ngIf="!isSignup">
-        <label for="email/phoneNo">Enter Email / Phone number</label>
+        <label for="email">Enter Email </label>
         <input
           nz-input
           type="text"
-          id="email/phoneNo"
-          name="email/phoneNo"
-          placeholder="Your email / phone no"
+          id="email"
+          name="email"
+          placeholder="Your email "
           [required]="!isSignup"
           ngModel
         />
       </p>
 
       <p *ngIf="isSignup">
-        <label for="firstname">First Name</label>
+        <label for="firstName">First Name</label>
         <input
           nz-input
           type="text"
-          id="firstname"
-          name="firstname"
+          id="firstName"
+          name="firstName"
           placeholder="Your Firstname"
           [required]="isSignup"
           ngModel
@@ -36,12 +36,12 @@
       </p>
 
       <p *ngIf="isSignup">
-        <label for="lastname">Last Name</label>
+        <label for="lastName">Last Name</label>
         <input
           nz-input
           type="text"
-          id="lastname"
-          name="lastname"
+          id="lastName"
+          name="lastName"
           placeholder="Your Lastname"
           [required]="isSignup"
           ngModel
@@ -117,15 +117,15 @@
     </p>
 
     <!-- or container  -->
-    <div class="or-container">
+    <!-- <div class="or-container">
       <p class="or-container_line"></p>
       <p>
         <span>or</span>
       </p>
-    </div>
+    </div> -->
 
     <!-- display various firebase auths -->
-    <div class="firebase-auth flex mt-2">
+    <!-- <div class="firebase-auth flex mt-2">
       <div
         class="el-center"
         *ngFor="let auth of firebaseAuths"
@@ -133,7 +133,7 @@
         <img src="assets/images/{{ auth }}.svg" alt="auth" class="mx-2" />
         <p>{{ auth | titlecase }}</p>
       </div>
-    </div>
+    </div> -->
   </section>
 </div>
 
