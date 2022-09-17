@@ -18,11 +18,17 @@ export class UserService {
 
   loginUser(data:any)
   {
-    return this.apiService.post(`users/login`, data);
+    return this.apiService.post(`users/login`, data, {
+      observe: 'response',
+      withCredentials: true,
+    });
   }
 
   signupUser(data:any) {
-    return this.apiService.post(`users/signup`, data);
+    return this.apiService.post(`users/signup`, data, {
+      observe: 'response',
+      withCredentials: true,
+    });
     
   }
 }

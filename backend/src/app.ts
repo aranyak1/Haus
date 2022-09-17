@@ -10,12 +10,18 @@ const app = express();
 app.enable('trust proxy');
 
 // Implement CORS
-app.use(cors());
+// app.use(cors());
 // Access-Control-Allow-Origin *
 // api.Haus.com, front-end Haus.com
 // app.use(cors({
 //   origin: 'https://www.Haus.com'
 // }))
+
+const corsConfig = {
+  credentials: true,
+  origin: true,
+};
+app.use(cors(corsConfig));
 
 const corsOptns = cors();
 
