@@ -1,5 +1,6 @@
 import express from 'express';
 import cors from 'cors';
+import cookieParser from 'cookie-parser';
 import homeRouter from './routes/homeRoutes';
 import userRouter from './routes/userRoutes';
 import bookingRouter from './routes/bookingRoutes';
@@ -24,6 +25,8 @@ app.options('*', corsOptns);
 //To access body of a req
 app.use(express.json());
 
+// To see cookie sent during authentication
+app.use(cookieParser());   
 // app.get('/', (req, res) => {
 //     res.send('this is Haus get');
 // });
