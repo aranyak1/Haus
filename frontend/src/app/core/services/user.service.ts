@@ -15,4 +15,14 @@ export class UserService {
   {
     return this.apiService.patch(`users/${id}`,data);
   }
+
+  loginUser(data:any)
+  {
+    return this.apiService.post(`users/login`, data);
+  }
+
+  signupUser(data:any) {
+    return this.apiService.post(`users/signup`, data);
+    
+  }
 }
