@@ -1,11 +1,12 @@
-import express from 'express';
+import express, { NextFunction } from 'express';
 import cors from 'cors';
 import cookieParser from 'cookie-parser';
 import homeRouter from './routes/homeRoutes';
 import userRouter from './routes/userRoutes';
 import bookingRouter from './routes/bookingRoutes';
+import AppError from './utils/appError';
 
-const app = express(); 
+const app = express();
 
 app.enable('trust proxy');
 
@@ -32,7 +33,7 @@ app.options('*', corsOptns);
 app.use(express.json());
 
 // To see cookie sent during authentication
-app.use(cookieParser());   
+app.use(cookieParser());
 // app.get('/', (req, res) => {
 //     res.send('this is Haus get');
 // });
@@ -52,10 +53,21 @@ app.use('/api/v1/homes', homeRouter);
 app.use('/api/v1/users', userRouter);
 app.use('/api/v1/bookings', bookingRouter);
 
-// app.all('*', (req, res, next) => {
-//   next(new AppError(`Can't find ${req.originalUrl} on this server!`, 404));
-// });
+app.all('*', (req, res, next) => {
+  next(new AppError(`Can't find ${req.originalUrl} on this server!`, 404));
+});
 
-// app.use(globalErrorHandler);
+app.use((err:any, req:any, res:any, next:any) => {
+  console.log('within global error handler');
+
+  err.statusCode = err.statusCode || 500;
+  err.status = err.status || 'error';
+  let error = { ...err };
+  error.message = err.message;
+  return res.status(err.statusCode).json({
+    status: err.status,
+    message: err.message,
+  });
+});
 
 export default app;

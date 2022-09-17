@@ -83,6 +83,7 @@ export const logout = (req: Request, res: Response) => {
 
 export const protect = catchAsync(
   async (req: any, res: Response, next: NextFunction) => {
+    console.log(req.headers);
     // 1) Getting token and check of it's there
     let token;
     if (
@@ -97,7 +98,7 @@ export const protect = catchAsync(
     if (!token) {
       return next(
         new AppError(
-          'You are not logged in! Please log in to get access.',
+          'You are not logged in! Please log in.',
           401,
         ),
       );
