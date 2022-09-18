@@ -5,7 +5,11 @@ import { ApiService } from './api.service';
   providedIn: 'root',
 })
 export class UserService {
-  constructor(private apiService: ApiService) {}
+  public userId = null;
+
+  constructor(private apiService: ApiService) {
+    console.log('userservice',this.userId)
+  }
 
   getUserById(id: string) {
     return this.apiService.get(`users/${id}`);

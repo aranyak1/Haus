@@ -25,12 +25,14 @@ export class AuthComponent implements OnInit {
 
   onSubmit(authForm: any) {
     if (this.isSignup) {
-      this.userService.signupUser(authForm.value).subscribe((res) => {
-        console.log('user signedup',res);
+      this.userService.signupUser(authForm.value).subscribe((res:any) => {
+        console.log('user signedup', res);
+        this.userService.userId = res.body.data.user._id;
       });
     } else {
-      this.userService.loginUser(authForm.value).subscribe((res) => {
-        console.log('user loggedin',res);
+      this.userService.loginUser(authForm.value).subscribe((res:any) => {
+        console.log('user loggedin', res);
+        this.userService.userId = res.body.data.user._id;
       });
     }
     console.log(authForm.value);
