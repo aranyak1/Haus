@@ -2,6 +2,7 @@ import express from 'express';
 import rateLimit from 'express-rate-limit';
 import helmet from 'helmet';
 import mongoSanitizer from 'express-mongo-sanitize';
+import compression from 'compression';
 import cors from 'cors';
 import cookieParser from 'cookie-parser';
 import homeRouter from './routes/homeRoutes';
@@ -68,6 +69,8 @@ app.use(cookieParser());
 // });
 
 // Routes
+
+app.use(compression());
 
 //log res headers
 app.use((req, res, next) => {
