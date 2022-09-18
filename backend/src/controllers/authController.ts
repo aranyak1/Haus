@@ -41,6 +41,7 @@ const createSendToken = (
 
 export const signup = catchAsync(
   async (req: Request, res: Response, next: NextFunction) => {
+    // console.log(req.cookies.jwt);
     const newUser = await User.create({
       firstName: req.body.firstName,
       lastName: req.body.lastName,
@@ -85,6 +86,7 @@ export const protect = catchAsync(
   async (req: any, res: Response, next: NextFunction) => {
     console.log(req.headers);
     // 1) Getting token and check of it's there
+    // from frontend we get jwt in header token like authorisation:Bearer jwttoken
     let token;
     if (
       req.headers.authorization &&
@@ -124,3 +126,16 @@ export const protect = catchAsync(
     next();
   },
 );
+
+export const restrictTo = (...roles:any) => {
+  return (req:any, res:Response, next:NextFunction) => {
+    // roles ['admin']. role='user'
+    if (!roles.includes(req.user.role)) {
+      return next(
+        new AppError('You do not have permission to perform this action', 403),
+      );
+    }
+
+    next();
+  };
+};

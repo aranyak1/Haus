@@ -10,7 +10,7 @@ router.get('/logout', authController.logout);
 
 router
   .route('/')
-  .get(userController.getAllUsers)
+  .get(authController.protect,authController.restrictTo('Admin'),userController.getAllUsers)
   .post(userController.createUser);
 
 router
