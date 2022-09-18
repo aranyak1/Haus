@@ -6,7 +6,7 @@
   "scripts": {
     "start": "node dist/server.js",
     "dev": "nodemon src/server.ts",
-    "build": "npm i typescript && npx tsc -p .",
+    "build": "npm i -g typescript && npx tsc -p .",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",
