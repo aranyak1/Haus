@@ -4,8 +4,11 @@
   </a>
 
   <!-- <app-search-bar *ngIf="showSearchBarHeader"></app-search-bar> -->
-  <div>
-    <!-- <button (click)="navigate()" >profile </button> -->
+  <div *ngIf="userLoggedIn">
+    <button class="button-s mr-1" (click)="navigate()">Hi, {{userName}}</button>
+    <button class="button-p" (click)="logout()">logout</button>
+  </div>
+  <div *ngIf="!userLoggedIn">
     <button class="button-s mr-1">Become a Host</button>
     <button
       class="button-p"

@@ -6,22 +6,36 @@ import { UserService } from 'src/app/core/services/user.service';
 @Component({
   selector: 'app-header',
   templateUrl: './header.component.html',
-    styleUrls: ['./header.component.scss']
-
+  styleUrls: ['./header.component.scss'],
 })
 export class HeaderComponent implements OnInit {
   showSearchBarHeader = false;
-  constructor(private searchBarService: SearchBarService,private router:Router,private userService:UserService) {
+  userName = 'Abc';
+  userLoggedIn = false;
+  constructor(
+    private searchBarService: SearchBarService,
+    private router: Router,
+    private userService: UserService
+  ) {
     searchBarService.showSearchBarOnHeader$.subscribe((data) => {
       this.showSearchBarHeader = data;
-    })
-   }
-
-  ngOnInit(): void {
+    });
+    this.userService.userLoggedIn.subscribe((value: any) => {
+      this.userLoggedIn = value;
+      this.userName = this.userService.userName;
+    });
   }
+
+  ngOnInit(): void {}
 
   navigate() {
-    this.router.navigate([`/account/users/${this.userService.userId}/profile`])
+    this.router.navigate([`/account/users/${this.userService.userId}/profile`]);
   }
 
+  logout() {
+    this.userService.logoutUser().subscribe((res: any) => {
+      this.userService.userId = null;
+      this.userService.userLoggedIn.next(false);
+    });
+  }
 }

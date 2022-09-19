@@ -10,13 +10,14 @@ import { NZ_I18N } from 'ng-zorro-antd/i18n';
 import { en_US } from 'ng-zorro-antd/i18n';
 import { registerLocaleData } from '@angular/common';
 import en from '@angular/common/locales/en';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ImagekitioAngularModule } from 'imagekitio-angular';
 import { environment } from '../environments/environment';
 import { HomeComponent } from './home/home.component';
 import { HousesModule } from './houses/houses.module';
 import { AccountModule } from './account/account.module';
+import { AuthInterceptor } from './auth.interceptor';
 
 registerLocaleData(en);
 
@@ -39,7 +40,14 @@ registerLocaleData(en);
       authenticationEndpoint: environment.Imagekitio.authenticationEndpoint,
     }),
   ],
-  providers: [{ provide: NZ_I18N, useValue: en_US }],
+  providers: [
+    { provide: NZ_I18N, useValue: en_US },
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: AuthInterceptor,
+      multi: true,
+    },
+  ],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

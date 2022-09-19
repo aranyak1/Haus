@@ -23,8 +23,8 @@ const createSendToken = (
     expires: new Date(Date.now() + 3600000),
     httpOnly: true,
     // secure: req.secure || req.headers['x-forwarded-proto'] === 'https',
-    secure:true,
-    sameSite:'none'
+    secure: true,
+    sameSite: 'none',
   });
 
   // Remove password from output
@@ -84,7 +84,7 @@ export const logout = (req: Request, res: Response) => {
 
 export const protect = catchAsync(
   async (req: any, res: Response, next: NextFunction) => {
-    console.log(req.headers);
+    // console.log(req.headers);
     // 1) Getting token and check of it's there
     // from frontend we get jwt in header token like authorisation:Bearer jwttoken
     let token;
@@ -107,8 +107,8 @@ export const protect = catchAsync(
     }
 
     // 2) Verification token
-    const decoded:any = await jwt.verify(token, process.env.JWT_SECRET!);
-
+    const jwtverify:any = promisify(jwt.verify);
+    const decoded:any = await jwtverify(token, process.env.JWT_SECRET!);
     // 3) Check if user still exists
     const currentUser = await User.findById(decoded.id);
     if (!currentUser) {
