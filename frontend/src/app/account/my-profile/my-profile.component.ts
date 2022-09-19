@@ -43,8 +43,8 @@ export class MyProfileComponent implements OnInit {
           this.user = res.data.data;
         });
     } else {
-      this.message.create('error', 'please login to view this page');
-            this.router.navigate([`/login`]);
+      // this.message.create('error', 'please login to view this page');
+      //       this.router.navigate([`/login`]);
     }
   }
 

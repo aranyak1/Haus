@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { NzMessageService } from 'ng-zorro-antd/message';
 import { UserService } from '../core/services/user.service';
@@ -8,7 +8,8 @@ import { UserService } from '../core/services/user.service';
   templateUrl: './account.component.html',
   styleUrls: ['./account.component.scss'],
 })
-export class AccountComponent implements OnInit {
+export class AccountComponent implements OnInit,OnDestroy {
+  subscription:any = null;
   buttons = [
     {
       name: 'MY PROFILE',
@@ -32,7 +33,7 @@ export class AccountComponent implements OnInit {
     private userService: UserService,
     private message:NzMessageService
   ) {
-    this.userService.userLoggedIn.subscribe((value) => {
+    this.subscription = this.userService.userLoggedIn.subscribe((value) => {
       if (value == false) {
         this.message.create('error', 'please login to view this page');
         this.router.navigate([`/login`]);
@@ -41,6 +42,13 @@ export class AccountComponent implements OnInit {
   }
 
   ngOnInit(): void {}
+
+  ngOnDestroy(): void{
+    if (this.subscription != null)
+    {
+      this.subscription.unsubscribe();
+      }
+  }
 
   navigate(url: string | undefined) {
     // console.log(this.router.url, url);
