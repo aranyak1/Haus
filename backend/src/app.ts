@@ -74,7 +74,7 @@ app.use(compression());
 
 //log res headers
 app.use((req, res, next) => {
-  console.log(req.headers);
+  // console.log(req.headers);
   next();
 });
 
