@@ -36,7 +36,7 @@
         nzLabel="Sort by price high to low"
       ></nz-option>
     </nz-select>
-    <h2 *ngIf="totalItems == 0">No results found</h2>
+    <!-- <h2 *ngIf="totalItems == 0">No results found</h2> -->
     <app-house-list
       (totalItemsEvent)="changeTotalItems($event)"
     ></app-house-list>
