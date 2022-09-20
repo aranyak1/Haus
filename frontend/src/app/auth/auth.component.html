@@ -18,6 +18,7 @@
           name="email"
           placeholder="Your email "
           [required]="!isSignup"
+          [(ngModel)]="defaultEmail"
           ngModel
         />
       </p>
@@ -94,6 +95,7 @@
             name="password"
             [required]="true"
             ngModel
+            [(ngModel)]="defaultPassword"
           />
         </nz-input-group>
       </p>

@@ -9,6 +9,8 @@ import { NzMessageService } from 'ng-zorro-antd/message';
   styleUrls: ['./auth.component.scss'],
 })
 export class AuthComponent implements OnInit {
+  defaultEmail = 'bfrancey3@mapquest.com';
+  defaultPassword = 'responsive';
   isSignup = false;
   title = 'Login';
   passwordVisible = false;
@@ -21,8 +23,13 @@ export class AuthComponent implements OnInit {
     private message: NzMessageService
   ) {
     if (router.url === '/signup') {
+      this.defaultEmail = '';
+      this.defaultPassword = '';
       this.isSignup = true;
       this.title = 'Signup';
+    } else {
+      this.defaultEmail = 'bfrancey3@mapquest.com';
+      this.defaultPassword = 'responsive';
     }
   }
 
@@ -35,10 +42,10 @@ export class AuthComponent implements OnInit {
           'success',
           'Signup successful redirecting to home page'
         );
-        this.userService.userLoggedIn.next(true);
         // console.log('user signedup', res);
         this.userService.userId = res.body.data.user._id;
         this.userService.userName = res.body.data.user.firstName;
+        this.userService.userLoggedIn.next(true);
         this.router.navigate(['/']);
       });
     } else {
