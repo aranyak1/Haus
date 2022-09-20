@@ -1,11 +1,5 @@
 # Haus 
 
-## Install and use firebase , angular/fire
-
-[angular/fire docs](https://github.com/angular/angularfire)
-
-[Install firebase with angular](https://github.com/angular/angularfire/issues/2768#issuecomment-830851882)
-
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 13.1.2.
 
 ## Development server
