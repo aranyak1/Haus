@@ -15,7 +15,7 @@ export class ApiService {
       .get(`${environment.apiUrl}${environment.apiVersion}${path}`, options)
       .pipe(
         catchError((err) => {
-          console.log(err);
+          // console.log(err);
           this.message.create('error', err.error.message);
           return throwError(() => new Error(err.error));
         })
@@ -31,7 +31,7 @@ export class ApiService {
       .pipe(
         catchError((err) => {
           this.message.create('error', err.error.message);
-          console.log(err);
+          // console.log(err);
           return throwError(() => new Error(err.error));
         })
       );
@@ -45,7 +45,7 @@ export class ApiService {
       )
       .pipe(
         catchError((err) => {
-          console.log(err);
+          // console.log(err);
           this.message.create('error', err.error.message);
           return throwError(() => new Error(err.error));
         })

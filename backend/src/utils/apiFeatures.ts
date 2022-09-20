@@ -14,7 +14,7 @@ export class APIFeatures {
 
     // remove state fiels
     for (let el in queryObj) {
-      console.log(el);
+      // console.log(el);
       if (el.trim().endsWith('State')) {
         delete queryObj[`${el}`];
       }

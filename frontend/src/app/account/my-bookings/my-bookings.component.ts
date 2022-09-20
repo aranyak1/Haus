@@ -14,7 +14,7 @@ export class MyBookingsComponent implements OnInit {
   ngOnInit(): void {
     this.bookingService.getBookingsByUserId().subscribe((res: any) => {
       this.bookings = res.data.data;
-      console.log(this.bookings);
+      // console.log(this.bookings);
     });
   }
 

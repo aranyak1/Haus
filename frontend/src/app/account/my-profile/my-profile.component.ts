@@ -34,7 +34,7 @@ export class MyProfileComponent implements OnInit {
 
   ngOnInit(): void {
     this.id = this.userService.userId;
-    console.log(this.id)
+    // console.log(this.id)
     if (this.id) {
       // this.router.navigate([`/users/${this.id}/profile`]);
       this.getUserByIdSubscription = this.userService
@@ -49,12 +49,12 @@ export class MyProfileComponent implements OnInit {
   }
 
   onSubmit(formData: any) {
-    console.log(formData.value);
+    // console.log(formData.value);
     this.userService
       .updateUserById(this.id, formData.value)
       .subscribe((res: any) => {
         this.user = res.data.data;
-        console.log('data updated successfully', res);
+        // console.log('data updated successfully', res);
         this.message.create('success', `Data updated succesfully!!`);
       });
   }

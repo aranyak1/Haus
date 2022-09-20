@@ -6,7 +6,7 @@ import { APIFeatures } from '../utils/apiFeatures';
 
 export const getOne = (Model: any, popOptions?: any) =>
   catchAsync(async (req: Request, res: Response, next: NextFunction) => {
-    console.log(Model);
+    // console.log(Model);
     let query = Model.findById(req.params.id);
     // with .populate we populate the owner field in houses with users and
     // in here only firstname and email are populated

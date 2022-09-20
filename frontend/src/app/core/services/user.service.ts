@@ -10,7 +10,7 @@ export class UserService {
   public userName = 'Abc';
   public userLoggedIn = new BehaviorSubject<Boolean>(false);
   constructor(private apiService: ApiService) {
-    console.log('userservice', this.userId);
+    // console.log('userservice', this.userId);
   }
 
   getUserById(id: string) {

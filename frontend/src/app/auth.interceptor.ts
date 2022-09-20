@@ -19,7 +19,7 @@ export class AuthInterceptor implements HttpInterceptor {
     next: HttpHandler
   ): Observable<HttpEvent<unknown>> {
     request = request.clone({ withCredentials: true });
-    console.log(request);
+    // console.log(request);
     return next.handle(request).pipe(
       catchError((error: HttpErrorResponse) => {
         // if jwt has expired logout the user

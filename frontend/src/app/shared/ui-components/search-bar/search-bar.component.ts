@@ -1,4 +1,10 @@
-import { Component, OnInit,Input, SimpleChange, SimpleChanges } from '@angular/core';
+import {
+  Component,
+  OnInit,
+  Input,
+  SimpleChange,
+  SimpleChanges,
+} from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { differenceInCalendarDays } from 'date-fns';
@@ -11,7 +17,7 @@ import { SearchBarService } from 'src/app/core/services/search-bar.service';
   styleUrls: ['./search-bar.component.scss'],
 })
 export class SearchBarComponent implements OnInit {
-  rangeSize:NzDatePickerSizeType = 'large';
+  rangeSize: NzDatePickerSizeType = 'large';
   showSearchBarHeader = false;
   searchInputSize = 30;
   travellerInputSize = 20;
@@ -32,24 +38,24 @@ export class SearchBarComponent implements OnInit {
     }),
   });
 
-  constructor(private searchBarService: SearchBarService, private router:Router) {
-    searchBarService.showSearchBarOnHeader$.subscribe(data => {
-      if (data)
-      {
+  constructor(
+    private searchBarService: SearchBarService,
+    private router: Router
+  ) {
+    searchBarService.showSearchBarOnHeader$.subscribe((data) => {
+      if (data) {
         this.searchInputSize = 17;
         this.travellerInputSize = 15;
         this.showSearchBarHeader = true;
-      }
-      else
-      {
+      } else {
         this.searchInputSize = 30;
         this.travellerInputSize = 20;
         this.showSearchBarHeader = false;
       }
-    })
+    });
   }
 
-  ngOnInit(): void {  }
+  ngOnInit(): void {}
 
   disabledDate = (current: Date): boolean => {
     // Can not select days before today and today
@@ -83,9 +89,19 @@ export class SearchBarComponent implements OnInit {
   }
   onSubmit() {
     if (this.searchForm.status) {
+      // console.log('valid');
       this.searchBarService.setQuery(this.searchForm.value.searchQuery);
-      this.router.navigate(['/search']);
-      console.log(this.searchForm.value);
+      if (this.searchForm.value.searchQuery != '') {
+        this.router.navigate(['/search'], {
+          queryParams: {
+            searchQuery: this.searchForm.value.searchQuery,
+            page: 1,
+          },
+        });
+      } else {
+        this.router.navigate(['/search']);
+      }
+      // console.log(this.searchForm.value);
     }
   }
 }

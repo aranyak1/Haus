@@ -16,7 +16,7 @@ export class MyListingsComponent implements OnInit {
         this.id = this.route.snapshot.paramMap.get('id')!;
         this.houseService.getHouseByUserId(this.id).subscribe((res: any) => {
           this.listings = res.data.data;
-          console.log(res);
+          // console.log(res);
         });
   }
 

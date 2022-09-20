@@ -36,7 +36,7 @@ export class AuthComponent implements OnInit {
           'Signup successful redirecting to home page'
         );
         this.userService.userLoggedIn.next(true);
-        console.log('user signedup', res);
+        // console.log('user signedup', res);
         this.userService.userId = res.body.data.user._id;
         this.userService.userName = res.body.data.user.firstName;
         this.router.navigate(['/']);
@@ -51,9 +51,9 @@ export class AuthComponent implements OnInit {
         this.userService.userName = res.body.data.user.firstName;
         this.userService.userLoggedIn.next(true);
         this.router.navigate(['/']);
-        console.log('user loggedin', res);
+        // console.log('user loggedin', res);
       });
     }
-    console.log(authForm.value);
+    // console.log(authForm.value);
   }
 }

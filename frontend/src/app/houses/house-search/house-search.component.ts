@@ -165,7 +165,7 @@ export class HouseSearchComponent implements OnInit {
   }
 
   onPageIndexChange(index: number) {
-    console.log('onpageindexchange', index);
+    // console.log('onpageindexchange', index);
     this.queryParams.page = index;
     this.currPage = index;
     this.navigateWithQueryParams();
@@ -184,7 +184,7 @@ export class HouseSearchComponent implements OnInit {
         // this.queryParams.page = 1;
         delete this.queryParams.page;
       }
-      console.log('sub', page);
+      // console.log('sub', page);
       this.navigateWithQueryParams();
     });
 
@@ -192,7 +192,7 @@ export class HouseSearchComponent implements OnInit {
       this.route.snapshot.queryParamMap.get('page') != null &&
       this.initialLoad == true
     ) {
-      console.log('changetotalitems', this.currPage, this.queryParams);
+      // console.log('changetotalitems', this.currPage, this.queryParams);
       let page = this.route.snapshot.queryParamMap.get('page');
       this.currPage = +page!;
       this.queryParams.page = +page!;
@@ -219,7 +219,7 @@ export class HouseSearchComponent implements OnInit {
 
   // filter houses based on rating, amenities , price,homeType
   filter(filterObj: any) {
-    console.log(filterObj);
+    // console.log(filterObj);
     let filterType = filterObj[0].filterType;
     if (filterType == 'ratingsAverage') {
       let ratingsAverageState = '';
@@ -269,7 +269,7 @@ export class HouseSearchComponent implements OnInit {
               return parseInt(x);
             }
           });
-          console.log(prices);
+          // console.log(prices);
           if (prices[0] < priceMin) {
             priceMin = prices[0];
           }
@@ -324,7 +324,7 @@ export class HouseSearchComponent implements OnInit {
   }
 
   navigateWithQueryParams() {
-    console.log('navigate with query params', this.queryParams);
+    // console.log('navigate with query params', this.queryParams);
     this.router.navigate([], { queryParams: this.queryParams });
   }
 

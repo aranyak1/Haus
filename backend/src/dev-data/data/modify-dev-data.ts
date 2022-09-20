@@ -85,6 +85,6 @@ homeData = homeData.map((home: any) => {
   i++;
   return home;
 });
-console.log(homeData);
+// console.log(homeData);
 
 fs.writeFileSync(`${__dirname}/homes.json`, JSON.stringify(homeData));

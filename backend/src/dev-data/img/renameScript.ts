@@ -13,7 +13,7 @@ let i = 0,count=1;
 imageFolder.forEach(folder => {
   const images = readdirSync(dirPath + '/' + folder);
   images.forEach(img => {
-    console.log(img);
+    // console.log(img);
     return rename(
       dirPath + '/' + folder + `/${img}`,
       dirPath + '/' + folder + `/${imageAbbr[i]}_${count++}.jpeg`,

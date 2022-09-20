@@ -29,7 +29,7 @@ export class MapsComponent implements OnInit, AfterViewInit, OnDestroy {
       
       this.initialState.lng = this.coordinates[0];
       this.initialState.lat = this.coordinates[1];
-      console.log('on')
+      // console.log('on')
       this.renderMap();
     }
   }
@@ -37,7 +37,7 @@ export class MapsComponent implements OnInit, AfterViewInit, OnDestroy {
   ngOnInit(): void {}
 
   ngAfterViewInit() {
-    console.log('view')
+    // console.log('view')
     this.renderMap();
   }
 

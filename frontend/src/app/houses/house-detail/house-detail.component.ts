@@ -57,7 +57,7 @@ export class HouseDetailComponent implements OnInit {
     this.id = this.route.snapshot.paramMap.get('id')!;
     this.houseService.getHouseById(this.id).subscribe((res: any) => {
       this.house = res.data.data;
-      console.log(this.house);
+      // console.log(this.house);
       //initialise houseCoordinates so we can display it in map
       this.houseCoordinates = this.house.location.coordinates;
       this.images = this.house.images.map((img: string) => {
@@ -90,7 +90,7 @@ export class HouseDetailComponent implements OnInit {
   }
 
   bookHouse() {
-    console.log(this.date)
+    // console.log(this.date)
     if (this.startDate != null && this.endDate != null) {
       let data = {
         homeId:this.id,
