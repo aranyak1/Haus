@@ -48,6 +48,6 @@ Implemented authentication and authorization with [JWT](https://jwt.io/)
 
 Used [Bcrypt](https://en.wikipedia.org/wiki/Bcrypt) for hashing passwords in database
 
-[Imagelit.io](https://imagekit.io/) for image storage and CDN
+[Imagekit.io](https://imagekit.io/) for image storage and CDN
 
 Map integration in house page  with [maptiler](https://www.maptiler.com/) 
